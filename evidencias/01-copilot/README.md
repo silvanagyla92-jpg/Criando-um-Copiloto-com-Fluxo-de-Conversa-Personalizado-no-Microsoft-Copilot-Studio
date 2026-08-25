@@ -1,20 +1,29 @@
 # Evidências — 01 Criação do Copilot
 
-Esta pasta deve conter as capturas de tela reais que comprovem a criação e configuração inicial do Copilot.
+Esta pasta está reservada para capturas de tela reais que comprovem a criação e configuração inicial do Copilot.
 
-## Arquivo esperado
+## Situação atual
+
+**Nenhuma captura real está disponível nesta pasta.**
+
+A autora não possui acesso ao ambiente original utilizado no desafio. Portanto, não serão adicionadas imagens simuladas ou capturas de terceiros como se fossem evidências do projeto.
+
+## Arquivo previsto
 
 `01-criacao-copilot.png`
 
-## O que a imagem deve demonstrar
+Esse nome representa um arquivo esperado para uma futura implementação e **não indica que o arquivo exista atualmente**.
+
+## O que a futura imagem deverá demonstrar
 
 - ambiente do Microsoft Copilot Studio;
 - identificação do agente, quando visível;
-- etapa de criação ou configuração inicial.
+- etapa de criação ou configuração inicial;
+- relação com o cenário documentado.
 
 ## Regra de evidência
 
-Não utilizar imagens genéricas da internet como se fossem evidências do projeto. As imagens desta pasta devem ser capturas reais da execução realizada pela autora.
+A evidência somente poderá ser considerada válida se for uma captura real da execução/configuração correspondente. Imagens genéricas da internet, exemplos da documentação ou diagramas conceituais não devem ser apresentados como comprovação da implementação própria.
 
 ---
 
