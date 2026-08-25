@@ -1,55 +1,185 @@
-# 02 — Arquitetura
+# 2. Arquitetura Conceitual
 
-## Visão conceitual
+## 2.1 Visão geral
 
-O projeto documentado utiliza o Microsoft Copilot Studio como plataforma de criação do agente conversacional. A arquitetura conceitual pode ser representada assim:
+A arquitetura deste projeto representa, de forma conceitual, os principais componentes necessários para estruturar um agente conversacional denominado **Assistente de Atendimento e Suporte**.
+
+O modelo foi elaborado para fins de documentação e estudo. Ele não representa uma arquitetura extraída de uma implementação real no Microsoft Copilot Studio.
+
+## 2.2 Arquitetura proposta
 
 ```text
-Usuário
-   │
-   ▼
-Entrada em linguagem natural
-   │
-   ▼
-Agente no Copilot Studio
-   │
-   ├── Seleção/acionamento de tópico
-   │       │
-   │       ├── Pergunta
-   │       ├── Condição
-   │       ├── Mensagem
-   │       └── Encerramento/redirecionamento
-   │
-   └── Fallback quando a intenção não é reconhecida
-           │
-           ▼
-      Tratamento da entrada
+                         ┌─────────────────────┐
+                         │       Usuário       │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │       Agente        │
+                         │   conversacional    │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                    ┌────────────────────────────┐
+                    │ Orquestração e seleção de  │
+                    │ recursos                   │
+                    └─────────────┬──────────────┘
+                                  │
+              ┌───────────────────┼───────────────────┐
+              │                   │                   │
+              ▼                   ▼                   ▼
+        ┌────────────┐      ┌────────────┐      ┌──────────────┐
+        │  Dúvidas   │      │  Suporte   │      │ Informações  │
+        └─────┬──────┘      └─────┬──────┘      └──────┬───────┘
+              │                   │                    │
+              └───────────────────┼────────────────────┘
+                                  ▼
+                         ┌─────────────────────┐
+                         │      Resposta       │
+                         └──────────┬──────────┘
+                                    │
+                       ┌────────────┴────────────┐
+                       │                         │
+                       ▼                         ▼
+                Nova solicitação           Encerramento
 ```
 
-## Tópicos
+## 2.3 Usuário
 
-A documentação oficial define tópico como a estrutura que determina como uma conversa do agente progride. O Copilot Studio permite criar tópicos a partir do zero ou com apoio de IA. Os tipos de nós incluem pergunta, condição, ferramenta, mensagem, redirecionamento e encerramento. [Microsoft Learn](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-create-edit-topics)
+O usuário representa a pessoa que interage com o agente. A interação pode começar por uma saudação, uma pergunta, uma solicitação de suporte ou um pedido de informação.
 
-## Acionamento
+## 2.4 Agente conversacional
 
-Os tópicos podem ser acionados por consulta do usuário ou por redirecionamento. Em orquestração clássica, frases de gatilho são usadas para associar a entrada a uma intenção; em orquestração generativa, o agente pode selecionar o tópico considerando seu nome e descrição. [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/triggering-topics)
+O agente representa o componente responsável por conduzir a experiência conversacional. Neste projeto conceitual, foi definido o agente **Assistente de Atendimento e Suporte**.
 
-## Fallback
+Seu objetivo é orientar o usuário em relação às três categorias definidas para o cenário:
 
-O tópico Fallback trata entradas que não são reconhecidas. A Microsoft documenta que ele pode ser personalizado e que pode utilizar a entrada não reconhecida para integração com outros componentes. [Microsoft Learn](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-system-fallback-topic)
+- Dúvidas;
+- Suporte;
+- Informações.
 
-## Limite da documentação
+## 2.5 Orquestração e seleção de recursos
 
-Este diagrama é uma representação conceitual baseada na documentação oficial. Ele não afirma que todos os componentes apresentados foram configurados no projeto original. As configurações efetivamente realizadas devem ser comprovadas pelas evidências em `evidencias/`.
+Esta camada representa, conceitualmente, o processo utilizado pelo agente para determinar quais recursos devem participar da resposta.
+
+Dependendo da configuração utilizada no Microsoft Copilot Studio, a orquestração pode envolver tópicos, ferramentas, fontes de conhecimento e outros recursos disponíveis para o agente.
+
+A implementação exata dessa camada não foi realizada neste projeto e, portanto, não é apresentada como configuração comprovada.
+
+## 2.6 Tópico de Dúvidas
+
+Representa solicitações nas quais o usuário busca explicações ou esclarecimentos.
+
+**Exemplos:**
+
+- "Tenho uma dúvida."
+- "Como funciona?"
+- "Pode me explicar?"
+
+**Resultado esperado:** fornecer uma resposta baseada nas informações disponíveis ou informar que não há dados suficientes para responder.
+
+## 2.7 Tópico de Suporte
+
+Representa situações nas quais o usuário relata um problema ou solicita orientação.
+
+**Exemplos:**
+
+- "Estou com um problema."
+- "Preciso de ajuda."
+- "Não consigo acessar minha conta."
+
+**Resultado esperado:** solicitar informações relevantes e apresentar orientações compatíveis com o escopo definido.
+
+## 2.8 Tópico de Informações
+
+Representa solicitações gerais sobre o serviço ou contexto do agente.
+
+**Exemplos:**
+
+- "Quero informações."
+- "Quais serviços estão disponíveis?"
+- "Onde encontro informações?"
+
+## 2.9 Tratamento de entradas fora do escopo
+
+O projeto prevê um caminho específico para solicitações que não estejam relacionadas ao escopo definido.
+
+Exemplo:
+
+> Não consigo ajudar com essa solicitação dentro do escopo atual. Posso ajudar com dúvidas, suporte ou informações relacionadas ao serviço.
+
+Esse comportamento é uma decisão de projeto e não representa uma configuração comprovada no Microsoft Copilot Studio.
+
+## 2.10 IA generativa
+
+A IA generativa é considerada neste projeto como uma possibilidade de implementação para ampliar a capacidade de resposta do agente.
+
+Entre os possíveis usos conceituais estão:
+
+- geração de respostas em linguagem natural;
+- tratamento de perguntas abertas;
+- apoio à formulação de respostas;
+- utilização de conhecimento disponível para elaboração de respostas.
+
+A utilização efetiva desses recursos não foi implementada ou testada neste projeto.
+
+## 2.11 Encerramento
+
+Após o atendimento, o usuário pode iniciar uma nova solicitação ou encerrar a conversa. Quando deseja continuar, o fluxo retorna à etapa de identificação da necessidade.
+
+## 2.12 Princípios arquiteturais
+
+### Clareza
+
+Os caminhos conversacionais devem ser compreensíveis e organizados.
+
+### Modularidade
+
+Os diferentes tipos de atendimento devem ser tratados como componentes separados.
+
+### Escalabilidade
+
+Novos caminhos podem ser adicionados posteriormente.
+
+### Rastreabilidade
+
+As decisões de projeto devem ser diferenciadas das funcionalidades efetivamente comprovadas.
+
+### Confiabilidade
+
+O agente não deve apresentar como fato uma informação que não possa ser sustentada pelas informações disponíveis.
+
+## 2.13 Limitações
+
+Esta arquitetura:
+
+- não foi implementada no Microsoft Copilot Studio;
+- não foi validada por execução de um agente real;
+- não representa uma exportação ou captura da plataforma;
+- não demonstra configurações específicas;
+- não contém resultados experimentais.
+
+Portanto, deve ser interpretada como uma **arquitetura conceitual para fins de documentação e estudo**.
+
+## 2.14 Classificação das informações
+
+| Elemento | Classificação |
+|---|---|
+| Usuário | Conceito do projeto |
+| Assistente de Atendimento e Suporte | Decisão de projeto |
+| Dúvidas | Decisão de projeto |
+| Suporte | Decisão de projeto |
+| Informações | Decisão de projeto |
+| Tratamento fora do escopo | Decisão de projeto |
+| Orquestração | Conceito técnico que depende da implementação |
+| IA generativa | Recurso técnico documentado; uso neste projeto não confirmado |
+| Arquitetura apresentada | Arquitetura conceitual |
+| Implementação no Copilot Studio | Não realizada |
+| Resultados funcionais | Não disponíveis |
 
 ---
 
-**Projeto:** Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado
+**Projeto:** Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado  
+**Autora:** Nágyla Silva  
 
-**Autora:** Nágyla Silva
-
-Projeto integrante do portfólio prático em Inteligência Artificial,
-desenvolvido para demonstrar competências em treinamento e avaliação de
-sistemas de IA, análise crítica de respostas e anotação de dados, aplicadas às
-funções de AI Trainer, AI Response Evaluator e Data Annotator, com base em
-experiência em QA e Auditoria.
+Projeto integrante do portfólio prático em Inteligência Artificial, desenvolvido para demonstrar competências em treinamento e avaliação de sistemas de IA, análise crítica de respostas e anotação de dados, aplicadas às funções de AI Trainer, AI Response Evaluator e Data Annotator, com base em experiência em QA e Auditoria.
