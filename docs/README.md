@@ -1,14 +1,25 @@
-# Documentação do projeto
+# Documentação do Projeto
 
-Esta pasta reúne a documentação técnica complementar do projeto. O conteúdo descreve a solução com base no repositório e em documentação oficial da Microsoft. Detalhes específicos da configuração realizada no ambiente original devem ser confirmados pelas evidências do projeto antes da publicação final.
+Esta pasta reúne a documentação técnica do projeto **Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado**.
+
+O conteúdo combina especificação conceitual, referências técnicas e registros do processo de documentação com Inteligência Artificial. Configurações específicas do Microsoft Copilot Studio somente devem ser consideradas comprovadas quando houver evidência correspondente.
 
 ## Documentos
 
-- [Metodologia](./01-metodologia/README.md)
-- [Arquitetura](./02-arquitetura/README.md)
-- [Fluxo conversacional](./03-fluxo-conversacional/README.md)
-- [Configuração](./04-configuracao/README.md)
-- [Resultados](./05-resultados/README.md)
+1. [Metodologia](./01-metodologia/README.md) — método utilizado, critérios de análise, confiabilidade e validação.
+2. [Arquitetura](./02-arquitetura/README.md) — arquitetura conceitual e relação entre usuário, agente, fluxo e respostas.
+3. [Fluxo conversacional](./03-fluxo-conversacional/README.md) — caminhos de conversa, entradas alternativas e tratamento de situações fora do escopo.
+4. [Configuração](./04-configuracao/README.md) — conceitos e pontos de configuração relacionados ao desafio, sem atribuir ao projeto configurações não comprovadas.
+5. [Requisitos](./05-requisitos/README.md) — requisitos funcionais, não funcionais e matriz de rastreabilidade.
+6. [Testes](./06-testes/README.md) — casos de teste planejados e critérios para futura execução.
+7. [Resultados](./07-resultados/README.md) — resultados documentais atuais, limitações e critérios de validação.
+
+## Navegação complementar
+
+- [Prompts utilizados](../prompts/README.md)
+- [Diagramas](../diagramas/README.md)
+- [Evidências](../evidencias/README.md)
+- [Referências técnicas](../referencias/README.md)
 
 ## Fonte principal
 
