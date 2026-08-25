@@ -1,152 +1,151 @@
 # Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado
 
-> Projeto desenvolvido com **Microsoft Copilot Studio** e documentado com apoio de ferramentas de Inteligência Artificial, com foco em documentação técnica clara, organizada, verificável e visual.
+> Projeto documental desenvolvido para o desafio **Criando um Copiloto com Fluxo de Conversa Personalizado no Microsoft Copilot Studio**, utilizando Inteligência Artificial como ferramenta de apoio à concepção, organização, análise crítica e documentação técnica.
 
 ## 1. Sobre o projeto
 
-Este repositório apresenta a documentação técnica do projeto **Criando um Copiloto com Fluxo de Conversa Personalizado no Microsoft Copilot Studio**, realizado no contexto do desafio da DIO.
+Este repositório apresenta uma documentação técnica conceitual para um cenário de **Assistente de Atendimento e Suporte**, inspirado no desafio da DIO sobre criação de um Copiloto com fluxo de conversa personalizado.
 
-O objetivo desta entrega é demonstrar como ferramentas de Inteligência Artificial podem apoiar a análise, organização, revisão e aprimoramento da documentação de um projeto de IA conversacional.
+O objetivo desta entrega é demonstrar como ferramentas de Inteligência Artificial podem apoiar a criação de documentação técnica clara, estruturada, rastreável e verificável.
 
-A documentação diferencia informações comprovadas sobre o projeto de explicações técnicas baseadas em documentação oficial. Configurações específicas do Copilot devem ser confirmadas pelas evidências visuais disponíveis no repositório.
+**Importante:** esta versão do repositório não deve ser interpretada como comprovação de uma implementação funcional própria no Microsoft Copilot Studio. A autora não possui acesso ao ambiente original utilizado no desafio. Por isso, configurações, testes e resultados específicos da plataforma são classificados como não confirmados quando não existe evidência correspondente.
 
 ## 2. Objetivos
 
-### 2.1 Objetivo do projeto original
+### 2.1 Objetivo do projeto documental
 
-Documentar a criação de um Copilot com fluxo de conversa personalizado, contemplando a criação do agente, configuração de tópicos, tratamento de situações de fallback e utilização de recursos de IA generativa, conforme o escopo registrado no desafio original.
+- Documentar um cenário de agente conversacional com fluxo personalizado.
+- Explicar sua arquitetura e seus caminhos conversacionais.
+- Definir requisitos funcionais e não funcionais.
+- Elaborar casos de teste planejados.
+- Registrar os prompts utilizados no processo de documentação com IA.
+- Separar fatos documentados, decisões de projeto, inferências e informações não confirmadas.
+- Organizar referências técnicas oficiais.
+- Estruturar evidências e diagramas sem fabricar comprovações de execução.
 
-### 2.2 Objetivo desta documentação
+### 2.2 Relação com o desafio
 
-- Organizar as informações técnicas do projeto.
-- Explicar a arquitetura e o fluxo conversacional.
-- Registrar a metodologia utilizada.
-- Documentar os prompts empregados no processo de documentação.
-- Separar fatos, inferências e informações que dependem de evidências.
-- Disponibilizar referências oficiais para conceitos do Microsoft Copilot Studio.
-- Reunir evidências e diagramas em uma estrutura de fácil navegação.
+O desafio propõe a documentação de um projeto utilizando ferramentas de Inteligência Artificial e solicita uma entrega organizada em um repositório GitHub, com seções e imagens.
+
+Neste repositório, a parte documental foi estruturada mesmo sem acesso ao ambiente original. As imagens que seriam evidências de configuração ou execução são tratadas separadamente e não são inventadas.
 
 ## 3. Microsoft Copilot Studio
 
-O Microsoft Copilot Studio é uma plataforma da Microsoft para criação e configuração de agentes e experiências conversacionais com recursos de IA. A documentação oficial apresenta recursos relacionados a tópicos, gatilhos, orquestração, respostas generativas e tópicos de fallback.
+O Microsoft Copilot Studio é uma plataforma da Microsoft para criação e configuração de agentes conversacionais. A documentação oficial apresenta recursos relacionados a tópicos, gatilhos, orquestração, respostas generativas e fallback.
 
-Os tópicos podem ser acionados de diferentes maneiras. Em agentes com orquestração generativa, o gatilho padrão pode ser **O agente escolhe**; em cenários de orquestração clássica, pode ser utilizado **O usuário diz uma frase**, com frases de gatilho configuradas para o tópico. citeturn0search2turn0search3
+Neste projeto, esses conceitos são utilizados como referência técnica para a modelagem do cenário. A configuração exata de um agente no ambiente do desafio não é atribuída ao projeto sem evidência.
 
-O tópico de fallback pode ser utilizado quando o agente não consegue determinar a intenção do usuário com confiança suficiente para acionar um tópico existente, permitindo personalizar o comportamento para entradas não reconhecidas. citeturn0search0turn0search4
+Consulte as [referências técnicas oficiais](./referencias/README.md) para os conceitos específicos utilizados na documentação.
 
-O Copilot Studio também oferece respostas generativas, que podem utilizar fontes de conhecimento para produzir respostas quando os tópicos configurados não atendem à consulta. citeturn0search1turn0search10
+## 4. Cenário documentado
 
-## 4. O que foi desenvolvido no desafio
+O cenário conceitual utiliza um **Assistente de Atendimento e Suporte** com os seguintes caminhos:
 
-Com base no registro original do projeto, foram trabalhados os seguintes pontos:
+- **Dúvidas** — perguntas e esclarecimentos dentro do escopo.
+- **Suporte** — problemas ou dificuldades que exigem orientação.
+- **Informações** — solicitações informativas relacionadas ao cenário.
+- **Entrada ambígua** — solicitação de esclarecimentos antes do direcionamento.
+- **Fora do escopo** — tratamento transparente de solicitações não relacionadas.
+- **Continuidade** — possibilidade de iniciar uma nova solicitação.
+- **Encerramento** — finalização da interação.
 
-### 4.1 Criação de um Copilot em branco
+Esses caminhos são **decisões de projeto**, não configurações atribuídas automaticamente ao Microsoft Copilot Studio.
 
-Criação inicial de um agente conversacional a partir de uma configuração em branco, permitindo estruturar a solução de acordo com o objetivo do exercício.
+## 5. Tecnologias utilizadas
 
-### 4.2 Personalização de tópico
-
-Configuração de um tópico para organizar o fluxo de conversa. No Copilot Studio, tópicos representam unidades de comportamento conversacional e podem utilizar gatilhos e diferentes nós para conduzir a interação. citeturn0search11turn0search2
-
-### 4.3 Tratamento de entradas não reconhecidas
-
-Configuração de comportamento relacionado a mensagens de erro ou fallback. O fallback é utilizado para lidar com situações em que a entrada do usuário não corresponde adequadamente aos tópicos disponíveis. citeturn0search0turn0search4
-
-### 4.4 Utilização de IA generativa
-
-Exploração de recursos de IA generativa para respostas conversacionais. A documentação oficial diferencia respostas generativas e outras configurações de IA generativa, incluindo fontes de conhecimento e instruções personalizadas. citeturn0search1turn0search9
-
-> **Critério de evidência:** os detalhes específicos da configuração realizada no ambiente original não são inferidos apenas a partir da documentação do produto. Eles devem ser comprovados pelas capturas de tela e demais evidências do projeto.
-
-## 5. Tecnologias e recursos utilizados
-
-- **Microsoft Copilot Studio** — criação e configuração do agente.
-- **Inteligência Artificial Generativa (GenAI)** — recursos de geração e apoio à interação conversacional.
-- **Microsoft Learn** — fonte oficial utilizada para validação dos conceitos técnicos.
-- **GitHub** — hospedagem, versionamento e organização da documentação.
+- **Microsoft Copilot / Inteligência Artificial** — apoio à concepção, redação, análise e revisão da documentação.
+- **Microsoft Copilot Studio** — plataforma de referência do desafio e dos conceitos técnicos documentados.
+- **Microsoft Learn** — fonte oficial para validação de conceitos do Copilot Studio.
+- **GitHub** — hospedagem, versionamento e organização dos artefatos.
 - **Markdown** — estruturação dos arquivos de documentação.
 
 ## 6. Estrutura do repositório
 
-A documentação foi organizada em pastas para separar metodologia, arquitetura, fluxo conversacional, configuração, resultados, prompts, diagramas e evidências.
-
 ### 6.1 `docs/` — Documentação técnica
 
-Concentra a documentação principal do projeto e funciona como índice para os conteúdos técnicos.
-
-- [**Documentação técnica**](./docs/README.md) — visão geral e navegação da documentação.
-- [**01 — Metodologia**](./docs/01-metodologia/README.md) — método utilizado, critérios de análise, confiabilidade e validação.
-- [**02 — Arquitetura**](./docs/02-arquitetura/README.md) — arquitetura conceitual e relação entre usuário, Copilot, tópicos, fluxo e respostas.
-- [**03 — Fluxo conversacional**](./docs/03-fluxo-conversacional/README.md) — tópicos, gatilhos, caminhos de conversa e fallback.
-- [**04 — Configuração**](./docs/04-configuracao/README.md) — orientações e informações relacionadas à configuração do Copilot.
-- [**05 — Resultados**](./docs/05-resultados/README.md) — resultados, interpretação e critérios de validação.
+- [**Documentação técnica**](./docs/README.md) — índice geral da documentação.
+- [**01 — Metodologia**](./docs/01-metodologia/README.md) — método, critérios de análise e validação.
+- [**02 — Arquitetura**](./docs/02-arquitetura/README.md) — arquitetura conceitual do agente.
+- [**03 — Fluxo conversacional**](./docs/03-fluxo-conversacional/README.md) — caminhos, entradas alternativas e continuidade.
+- [**04 — Configuração**](./docs/04-configuracao/README.md) — conceitos e pontos de configuração da plataforma, sem afirmar configuração própria não comprovada.
+- [**05 — Requisitos**](./docs/05-requisitos/README.md) — requisitos funcionais, não funcionais e rastreabilidade.
+- [**06 — Testes**](./docs/06-testes/README.md) — casos de teste planejados e critérios de execução.
+- [**07 — Resultados**](./docs/07-resultados/README.md) — resultados documentais atuais e limitações.
 
 ### 6.2 `prompts/` — Prompts utilizados
 
-Reúne os prompts e orientações utilizados para apoiar a análise e a produção da documentação com Inteligência Artificial.
+- [**Prompts e uso da IA**](./prompts/README.md) — prompts utilizados para cenário, arquitetura, fluxo, requisitos, testes, análise crítica e validação.
 
-- [**Prompts utilizados**](./prompts/README.md) — análise, estruturação, revisão crítica e validação.
+### 6.3 `diagramas/` — Diagramas
 
-### 6.3 `diagramas/` — Representações visuais
+- [**Diagramas**](./diagramas/README.md) — arquitetura e fluxo conversacional em representação conceitual.
 
-Destinada aos diagramas utilizados para representar a arquitetura e o fluxo conversacional do projeto.
+### 6.4 `evidencias/` — Evidências
 
-- [**Diagramas**](./diagramas/README.md) — orientações e documentação dos diagramas.
+- [**Evidências**](./evidencias/README.md) — classificação, limitações e critérios para evidências reais.
+- [**01 — Criação do Copilot**](./evidencias/01-copilot/README.md) — espaço destinado a evidências reais da criação/configuração.
+- [**02 — Fluxo**](./evidencias/02-fluxo/README.md) — espaço destinado a evidências reais do fluxo.
+- [**03 — Resultados**](./evidencias/03-resultados/README.md) — espaço destinado a evidências reais dos testes e resultados.
 
-### 6.4 `evidencias/` — Evidências do projeto
+### 6.5 `referencias/` — Referências técnicas
 
-Reúne as evidências visuais que deverão comprovar as configurações e os resultados efetivamente observados no Microsoft Copilot Studio.
-
-- [**01 — Criação do Copilot**](./evidencias/01-copilot/README.md) — evidências da criação e configuração inicial.
-- [**02 — Fluxo**](./evidencias/02-fluxo/README.md) — evidências do tópico, gatilhos, fluxo e tratamento de erro.
-- [**03 — Resultados**](./evidencias/03-resultados/README.md) — evidências dos testes e resultados observados.
-
-> **Importante:** as evidências visuais devem ser capturas reais do projeto. Imagens genéricas ou capturas de outros projetos não devem ser apresentadas como comprovação da implementação.
+- [**Referências técnicas**](./referencias/README.md) — fontes oficiais e critérios de confiabilidade.
 
 ## 7. Metodologia de documentação com IA
 
 A Inteligência Artificial foi utilizada como ferramenta de apoio, e não como substituta da validação humana.
 
-O processo documental considera as seguintes etapas:
+O processo considera:
 
-1. Levantamento das informações existentes.
-2. Identificação de lacunas na documentação.
-3. Organização das informações em seções técnicas.
-4. Utilização de IA para sugestões de estrutura e redação.
-5. Verificação das afirmações técnicas em fontes confiáveis.
-6. Separação entre informações confirmadas e inferências.
-7. Revisão crítica do conteúdo gerado.
-8. Organização das evidências e referências.
-9. Revisão final da consistência dos documentos.
+1. levantamento das informações disponíveis;
+2. identificação de lacunas;
+3. definição do cenário documental;
+4. organização das informações em seções técnicas;
+5. utilização de IA para sugestões e redação;
+6. análise crítica das respostas geradas;
+7. verificação de afirmações técnicas em fontes confiáveis;
+8. separação entre fatos, decisões de projeto, inferências e informações não confirmadas;
+9. organização de referências, diagramas e evidências;
+10. auditoria de consistência do repositório.
 
-## 8. Fontes técnicas oficiais
+## 8. Evidências e limitações
 
-As informações técnicas sobre o Microsoft Copilot Studio foram verificadas prioritariamente na documentação oficial da Microsoft:
+Atualmente, o repositório **não contém screenshots reais de uma implementação no Copilot Studio**.
+
+Isso é intencional: imagens genéricas, imagens de terceiros ou diagramas conceituais não serão apresentados como evidência de execução.
+
+Os testes em `docs/06-testes/` são planejados e não executados. Os diagramas em `diagramas/` são conceituais. A pasta `evidencias/` registra o que seria necessário comprovar em uma futura implementação.
+
+## 9. Fontes técnicas oficiais
+
+As informações específicas sobre o Microsoft Copilot Studio devem ser verificadas prioritariamente na documentação oficial da Microsoft.
 
 - [Microsoft Copilot Studio — documentação oficial](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/)
-- [Criar e editar tópicos](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-create-edit-topics?tabs=webApp)
-- [Definir gatilhos de tópicos](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-triggers)
-- [Disparar tópicos](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/guidance/triggering-topics)
-- [Criar frases de gatilho eficazes](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/guidance/trigger-phrases-best-practices)
-- [Usar o tópico de fallback](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/guidance/fallback-topic)
-- [Configurar o tópico de fallback do sistema](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-system-fallback-topic)
-- [Perguntas frequentes para respostas generativas](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/faqs-generative-answers)
-- [Otimizar prompts e configuração de tópicos](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/guidance/optimize-prompts-topic-configuration)
+- [Criar e editar tópicos](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-create-edit-topics)
+- [Gatilhos de tópicos](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-triggers)
+- [Tópico de fallback do sistema](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-system-fallback-topic)
+- [Respostas generativas](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/faqs-generative-answers)
 
-## 9. Status da documentação
+A lista organizada e contextualizada está em [Referências técnicas](./referencias/README.md).
 
-**Situação atual:** documentação estruturada e organizada, com áreas específicas reservadas para evidências visuais e diagramas.
+## 10. Status do projeto
 
-Antes da entrega final, recomenda-se verificar:
+| Item | Status |
+|---|---|
+| Estrutura documental | Concluída nesta etapa |
+| Metodologia | Documentada |
+| Arquitetura conceitual | Documentada |
+| Fluxo conversacional | Documentado |
+| Configuração específica do Copilot Studio | Não confirmada |
+| Requisitos | Documentados |
+| Testes | Planejados, não executados |
+| Resultados funcionais | Não disponíveis |
+| Evidências visuais reais | Não disponíveis |
+| Diagrama PNG | Ainda não disponível |
+| Referências técnicas | Organizadas |
+| Prompts utilizados | Documentados |
 
-- se todas as capturas reais do projeto foram adicionadas;
-- se os diagramas representam fielmente a implementação;
-- se os links internos continuam funcionando;
-- se as configurações descritas correspondem ao ambiente utilizado;
-- se não existem afirmações técnicas sem fonte ou evidência;
-- se a documentação está consistente com o projeto original.
-
-## 10. Contato
+## 11. Contato
 
 **Autor:** Nágyla Silva  
 **Projeto:** Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado  
