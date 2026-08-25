@@ -39,7 +39,7 @@ def arrow(draw, p1, p2):
 
 
 # Arquitetura conceitual
-img = Image.new("RGB", (1900, 1700), "white")
+img = Image.new("RGB", (1900, 1800), "white")
 d = ImageDraw.Draw(img)
 centered(d, (50,30,1850,100), "Arquitetura Conceitual — Assistente de Atendimento e Suporte", title_font)
 
@@ -47,11 +47,12 @@ nodes = {
     "u": (700,150,1200,250),
     "i": (700,320,1200,420),
     "a": (700,490,1200,590),
-    "d": (60,700,430,820),
-    "s": (500,700,870,820),
-    "info": (940,700,1310,820),
-    "amb": (1380,700,1840,820),
-    "clar": (1380,900,1840,1020),
+    "d": (40,700,400,820),
+    "s": (430,700,790,820),
+    "info": (820,700,1180,820),
+    "amb": (1210,700,1590,820),
+    "f": (1620,700,1860,820),
+    "clar": (1210,900,1590,1020),
     "r": (700,1080,1200,1200),
     "c": (470,1330,870,1450),
     "e": (1030,1330,1430,1450),
@@ -64,6 +65,7 @@ labels = {
     "s":"Suporte",
     "info":"Informações",
     "amb":"Entrada ambígua",
+    "f":"Fora do escopo",
     "clar":"Solicitar esclarecimento",
     "r":"Resposta",
     "c":"Continuar",
@@ -74,21 +76,25 @@ for key, xy in nodes.items():
 
 arrow(d,(950,250),(950,320))
 arrow(d,(950,420),(950,490))
-arrow(d,(950,590),(245,700))
-arrow(d,(950,590),(685,700))
-arrow(d,(950,590),(1125,700))
-arrow(d,(950,590),(1610,700))
-arrow(d,(245,820),(950,1080))
-arrow(d,(685,820),(950,1080))
-arrow(d,(1125,820),(950,1080))
-arrow(d,(1610,820),(1610,900))
-arrow(d,(1610,1020),(950,1080))
+arrow(d,(950,590),(220,700))
+arrow(d,(950,590),(610,700))
+arrow(d,(950,590),(1000,700))
+arrow(d,(950,590),(1400,700))
+arrow(d,(950,590),(1740,700))
+arrow(d,(220,820),(950,1080))
+arrow(d,(610,820),(950,1080))
+arrow(d,(1000,820),(950,1080))
+arrow(d,(1400,820),(1400,900))
+arrow(d,(1400,1020),(950,490))
+arrow(d,(1740,820),(950,1080))
 arrow(d,(950,1200),(670,1330))
 arrow(d,(950,1200),(1230,1330))
 
-centered(d,(40,1490,1860,1570),
-         "Entrada fora do escopo: informar a limitação e orientar sobre os caminhos disponíveis.", small)
-centered(d,(40,1590,1860,1660),
+centered(d,(40,1500,1860,1580),
+         "Fora do escopo: informar a limitação e orientar sobre os caminhos disponíveis.", small)
+centered(d,(40,1600,1860,1670),
+         "Entrada ambígua: solicitar esclarecimento e retornar à identificação da necessidade.", small)
+centered(d,(40,1690,1860,1760),
          "Modelo conceitual do projeto — não representa configuração de uma plataforma.", small)
 img.save(OUT / "arquitetura-conceitual.png", optimize=True)
 
@@ -100,37 +106,39 @@ nodes = [
     ("Início",(700,140,1200,240)),
     ("Saudação",(700,300,1200,400)),
     ("Identificar necessidade",(700,460,1200,560)),
-    ("Dúvidas",(60,700,430,820)),
-    ("Suporte",(500,700,870,820)),
-    ("Informações",(940,700,1310,820)),
-    ("Entrada ambígua",(1380,700,1840,820)),
-    ("Fora do escopo",(60,970,430,1090)),
-    ("Solicitar esclarecimento",(1380,970,1840,1090)),
-    ("Resposta",(700,970,1200,1090)),
-    ("Continuar",(500,1240,900,1360)),
-    ("Encerrar",(1000,1240,1400,1360)),
-    ("Nova solicitação",(500,1460,900,1560)),
+    ("Dúvidas",(40,700,400,820)),
+    ("Suporte",(430,700,790,820)),
+    ("Informações",(820,700,1180,820)),
+    ("Entrada ambígua",(1210,700,1590,820)),
+    ("Fora do escopo",(1620,700,1860,820)),
+    ("Solicitar esclarecimento",(1210,930,1590,1050)),
+    ("Resposta",(700,930,1200,1050)),
+    ("Continuar",(500,1220,900,1340)),
+    ("Encerrar",(1000,1220,1400,1340)),
+    ("Nova solicitação",(500,1440,900,1540)),
 ]
 for text, xy in nodes:
     box(d, xy, text)
 
 arrow(d,(950,240),(950,300))
 arrow(d,(950,400),(950,460))
-arrow(d,(950,560),(245,700))
-arrow(d,(950,560),(685,700))
-arrow(d,(950,560),(1125,700))
-arrow(d,(950,560),(1610,700))
-arrow(d,(245,820),(950,970))
-arrow(d,(685,820),(950,970))
-arrow(d,(1125,820),(950,970))
-arrow(d,(1610,820),(1610,970))
-arrow(d,(1610,1090),(950,970))
-arrow(d,(950,1090),(700,1240))
-arrow(d,(950,1090),(1200,1240))
-arrow(d,(700,1360),(700,1460))
-arrow(d,(700,1460),(950,560))
-centered(d,(60,1110,1840,1190),
+arrow(d,(950,560),(220,700))
+arrow(d,(950,560),(610,700))
+arrow(d,(950,560),(1000,700))
+arrow(d,(950,560),(1400,700))
+arrow(d,(950,560),(1740,700))
+arrow(d,(220,820),(950,930))
+arrow(d,(610,820),(950,930))
+arrow(d,(1000,820),(950,930))
+arrow(d,(1400,820),(1400,930))
+arrow(d,(1400,1050),(950,460))
+arrow(d,(1740,820),(950,930))
+arrow(d,(950,1050),(700,1220))
+arrow(d,(950,1050),(1200,1220))
+arrow(d,(700,1340),(700,1440))
+arrow(d,(700,1440),(950,460))
+centered(d,(60,1580,1840,1660),
          "Fora do escopo: informar a limitação e orientar sobre os caminhos disponíveis.", small)
-centered(d,(40,1600,1860,1680),
+centered(d,(40,1680,1860,1720),
          "Modelo conceitual do projeto — não representa execução em uma plataforma.", small)
 img.save(OUT / "fluxo-conversacional.png", optimize=True)
