@@ -8,7 +8,6 @@ OUT.mkdir(exist_ok=True)
 
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-regular = ImageFont.truetype(FONT, 28)
 bold = ImageFont.truetype(BOLD, 30)
 title_font = ImageFont.truetype(BOLD, 40)
 small = ImageFont.truetype(FONT, 22)
@@ -40,46 +39,98 @@ def arrow(draw, p1, p2):
 
 
 # Arquitetura conceitual
-img = Image.new("RGB", (1800, 1500), "white")
+img = Image.new("RGB", (1900, 1700), "white")
 d = ImageDraw.Draw(img)
-centered(d, (50,30,1750,100), "Arquitetura Conceitual — Assistente de Atendimento e Suporte", title_font)
+centered(d, (50,30,1850,100), "Arquitetura Conceitual — Assistente de Atendimento e Suporte", title_font)
 
 nodes = {
-    "u": (650,150,1150,250), "i": (650,320,1150,420), "a": (650,490,1150,590),
-    "d": (80,700,480,820), "s": (510,700,910,820), "info": (940,700,1340,820),
-    "f": (1370,700,1770,820), "r": (650,940,1150,1060),
-    "c": (420,1190,820,1310), "e": (980,1190,1380,1310)
+    "u": (700,150,1200,250),
+    "i": (700,320,1200,420),
+    "a": (700,490,1200,590),
+    "d": (60,700,430,820),
+    "s": (500,700,870,820),
+    "info": (940,700,1310,820),
+    "amb": (1380,700,1840,820),
+    "clar": (1380,900,1840,1020),
+    "r": (700,1080,1200,1200),
+    "c": (470,1330,870,1450),
+    "e": (1030,1330,1430,1450),
 }
-labels = {"u":"Usuário", "i":"Interface de interação", "a":"Agente conversacional",
-          "d":"Dúvidas", "s":"Suporte", "info":"Informações", "f":"Fora do escopo",
-          "r":"Resposta", "c":"Continuar", "e":"Encerrar"}
+labels = {
+    "u":"Usuário",
+    "i":"Interface de interação",
+    "a":"Agente conversacional",
+    "d":"Dúvidas",
+    "s":"Suporte",
+    "info":"Informações",
+    "amb":"Entrada ambígua",
+    "clar":"Solicitar esclarecimento",
+    "r":"Resposta",
+    "c":"Continuar",
+    "e":"Encerrar",
+}
 for key, xy in nodes.items():
     box(d, xy, labels[key])
-arrow(d,(900,250),(900,320)); arrow(d,(900,420),(900,490))
-for x in [280,710,1140,1570]:
-    arrow(d,(900,590),(x,700)); arrow(d,(x,820),(900,940))
-arrow(d,(900,1060),(620,1190)); arrow(d,(900,1060),(1180,1190))
-centered(d,(200,1360,1600,1430),"Modelo conceitual do projeto — não representa configuração de uma plataforma.",small)
+
+arrow(d,(950,250),(950,320))
+arrow(d,(950,420),(950,490))
+arrow(d,(950,590),(245,700))
+arrow(d,(950,590),(685,700))
+arrow(d,(950,590),(1125,700))
+arrow(d,(950,590),(1610,700))
+arrow(d,(245,820),(950,1080))
+arrow(d,(685,820),(950,1080))
+arrow(d,(1125,820),(950,1080))
+arrow(d,(1610,820),(1610,900))
+arrow(d,(1610,1020),(950,1080))
+arrow(d,(950,1200),(670,1330))
+arrow(d,(950,1200),(1230,1330))
+
+centered(d,(40,1490,1860,1570),
+         "Entrada fora do escopo: informar a limitação e orientar sobre os caminhos disponíveis.", small)
+centered(d,(40,1590,1860,1660),
+         "Modelo conceitual do projeto — não representa configuração de uma plataforma.", small)
 img.save(OUT / "arquitetura-conceitual.png", optimize=True)
 
 # Fluxo conversacional
-img = Image.new("RGB", (1800, 1600), "white")
+img = Image.new("RGB", (1900, 1750), "white")
 d = ImageDraw.Draw(img)
-centered(d, (50,30,1750,100), "Fluxo Conversacional — Assistente de Atendimento e Suporte", title_font)
+centered(d, (50,30,1850,100), "Fluxo Conversacional — Assistente de Atendimento e Suporte", title_font)
 nodes = [
-    ("Início",(650,140,1150,240)), ("Saudação",(650,300,1150,400)),
-    ("Identificar necessidade",(650,460,1150,560)), ("Dúvidas",(80,700,480,820)),
-    ("Suporte",(510,700,910,820)), ("Informações",(940,700,1340,820)),
-    ("Fora do escopo",(1370,700,1770,820)), ("Solicitar esclarecimento",(80,970,480,1090)),
-    ("Resposta",(650,970,1150,1090)), ("Continuar",(510,1230,910,1350)),
-    ("Encerrar",(940,1230,1340,1350)), ("Nova solicitação",(510,1450,910,1550))
+    ("Início",(700,140,1200,240)),
+    ("Saudação",(700,300,1200,400)),
+    ("Identificar necessidade",(700,460,1200,560)),
+    ("Dúvidas",(60,700,430,820)),
+    ("Suporte",(500,700,870,820)),
+    ("Informações",(940,700,1310,820)),
+    ("Entrada ambígua",(1380,700,1840,820)),
+    ("Fora do escopo",(60,970,430,1090)),
+    ("Solicitar esclarecimento",(1380,970,1840,1090)),
+    ("Resposta",(700,970,1200,1090)),
+    ("Continuar",(500,1240,900,1360)),
+    ("Encerrar",(1000,1240,1400,1360)),
+    ("Nova solicitação",(500,1460,900,1560)),
 ]
-for text, xy in nodes: box(d, xy, text)
-arrow(d,(900,240),(900,300)); arrow(d,(900,400),(900,460))
-for x in [280,710,1140,1570]: arrow(d,(900,560),(x,700))
-for x in [280,710,1140]: arrow(d,(x,820),(900,970))
-arrow(d,(1570,820),(280,970)); arrow(d,(280,1090),(650,1020))
-arrow(d,(900,1090),(710,1230)); arrow(d,(900,1090),(1140,1230))
-arrow(d,(710,1350),(710,1450)); arrow(d,(710,1450),(900,560))
-centered(d,(180,1560,1620,1595),"Modelo conceitual do projeto — não representa execução em uma plataforma.",small)
+for text, xy in nodes:
+    box(d, xy, text)
+
+arrow(d,(950,240),(950,300))
+arrow(d,(950,400),(950,460))
+arrow(d,(950,560),(245,700))
+arrow(d,(950,560),(685,700))
+arrow(d,(950,560),(1125,700))
+arrow(d,(950,560),(1610,700))
+arrow(d,(245,820),(950,970))
+arrow(d,(685,820),(950,970))
+arrow(d,(1125,820),(950,970))
+arrow(d,(1610,820),(1610,970))
+arrow(d,(1610,1090),(950,970))
+arrow(d,(950,1090),(700,1240))
+arrow(d,(950,1090),(1200,1240))
+arrow(d,(700,1360),(700,1460))
+arrow(d,(700,1460),(950,560))
+centered(d,(60,1110,1840,1190),
+         "Fora do escopo: informar a limitação e orientar sobre os caminhos disponíveis.", small)
+centered(d,(40,1600,1860,1680),
+         "Modelo conceitual do projeto — não representa execução em uma plataforma.", small)
 img.save(OUT / "fluxo-conversacional.png", optimize=True)
