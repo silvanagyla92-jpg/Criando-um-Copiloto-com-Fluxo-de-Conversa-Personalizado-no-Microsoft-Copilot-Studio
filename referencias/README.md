@@ -10,33 +10,35 @@ A prioridade é dada a fontes oficiais e diretamente relacionadas às funcionali
 
 ## 2. Microsoft Learn — Copilot Studio
 
-### 2.1 Criar e editar tópicos
+### 2.1 Documentação geral
 
-A documentação oficial apresenta conceitos e procedimentos relacionados à criação e edição de tópicos no Microsoft Copilot Studio.
+[Microsoft Copilot Studio — documentação oficial](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/)
+
+**Uso no projeto:** referência principal para conceitos, recursos e procedimentos da plataforma.
+
+### 2.2 Criar e editar tópicos
 
 [Microsoft Learn — Criar e editar tópicos](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-create-edit-topics)
 
 **Uso no projeto:** fundamentação de conceitos relacionados a tópicos e construção de conversas.
 
----
+### 2.3 Gatilhos
 
-### 2.2 Gatilhos de tópicos
+[Microsoft Learn — Gatilhos](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-triggers)
 
-A documentação oficial apresenta informações sobre mecanismos de acionamento de tópicos.
+**Uso no projeto:** referência para mecanismos de acionamento de tópicos e para a distinção entre comportamentos que dependem da configuração de orquestração.
 
-[Microsoft Learn — Gatilhos de tópicos](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/triggering-topics)
-
-**Uso no projeto:** referência para o conceito de acionamento de fluxos conversacionais.
-
----
-
-### 2.3 Tópico de fallback do sistema
-
-A documentação oficial descreve o recurso de fallback utilizado quando uma entrada não é adequadamente tratada pelo fluxo configurado.
+### 2.4 Tópico de fallback do sistema
 
 [Microsoft Learn — Tópico de fallback do sistema](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-system-fallback-topic)
 
-**Uso no projeto:** fundamentação do conceito de tratamento de entradas que não encontram uma resposta ou encaminhamento adequado.
+**Uso no projeto:** fundamentação do conceito de tratamento de entradas que não encontram resposta ou encaminhamento adequado.
+
+### 2.5 Recursos de IA e orquestração
+
+[Microsoft Learn — Recursos de IA no Copilot Studio](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/guidance/ai-capabilities)
+
+**Uso no projeto:** referência para capacidades de IA e orquestração generativa. O uso desses recursos no projeto não é apresentado como implementação realizada.
 
 ---
 
@@ -64,9 +66,11 @@ O material do desafio apresenta como referência o projeto **Mega Man Robots API
 
 | Fonte | Tipo | Uso |
 |---|---|---|
+| Microsoft Learn — Documentação geral | Oficial | Referência principal |
 | Microsoft Learn — Tópicos | Oficial | Fundamentação técnica |
 | Microsoft Learn — Gatilhos | Oficial | Fundamentação técnica |
 | Microsoft Learn — Fallback | Oficial | Fundamentação técnica |
+| Microsoft Learn — Recursos de IA | Oficial | Fundamentação sobre IA e orquestração |
 | Repositório deste projeto | Primária | Artefatos e decisões do projeto |
 | MegaApiDotnetCore | Material do desafio | Referência indicada no enunciado |
 
@@ -85,6 +89,8 @@ Os diagramas, requisitos, prompts e casos de teste deste repositório são artef
 ## 7. Regra de atualização
 
 Como plataformas de software podem sofrer alterações, informações específicas sobre interface, funcionalidades, nomes de recursos e procedimentos devem ser verificadas na documentação oficial atual antes de uma implementação real.
+
+A data da auditoria desta documentação é **25/08/2026**. As referências devem ser revisitadas quando houver mudança relevante na plataforma.
 
 ---
 
