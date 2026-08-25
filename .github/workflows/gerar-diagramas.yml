@@ -5,11 +5,15 @@ on:
     branches: [main]
     paths:
       - 'scripts/gerar_diagramas.py'
-      - 'diagramas/README.md'
       - '.github/workflows/gerar-diagramas.yml'
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: gerar-diagramas-main
+  cancel-in-progress: false
 
 jobs:
   gerar:
@@ -22,6 +26,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+          cache: 'pip'
 
       - name: Instalar Pillow
         run: python -m pip install --upgrade pillow
@@ -29,7 +34,12 @@ jobs:
       - name: Gerar PNGs
         run: python scripts/gerar_diagramas.py
 
-      - name: Versionar PNGs
+      - name: Verificar diagramas gerados
+        run: |
+          test -s diagramas/arquitetura-conceitual.png
+          test -s diagramas/fluxo-conversacional.png
+
+      - name: Versionar PNGs atualizados
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -37,6 +47,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nenhuma alteração nos PNGs."
           else
-            git commit -m "docs: adicionar diagramas PNG"
+            git commit -m "docs: atualizar diagramas PNG"
             git push
           fi
