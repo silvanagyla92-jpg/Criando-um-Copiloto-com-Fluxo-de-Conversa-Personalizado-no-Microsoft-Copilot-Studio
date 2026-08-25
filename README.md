@@ -66,8 +66,6 @@ Ao final do desafio, foi registrado no projeto um Copilot com fluxo de conversa 
 
 **Projeto:** Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado
 
-**Autora:** Nágyla Silva
-
 Projeto integrante do portfólio prático em Inteligência Artificial,
 desenvolvido para demonstrar competências em treinamento e avaliação de
 sistemas de IA, análise crítica de respostas e anotação de dados, aplicadas às
