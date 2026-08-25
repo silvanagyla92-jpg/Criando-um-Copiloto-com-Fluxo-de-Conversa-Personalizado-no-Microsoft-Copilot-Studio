@@ -4,7 +4,7 @@
 
 Esta seção descreve conceitos e pontos de configuração relacionados ao desafio e ao cenário documentado.
 
-O conteúdo organiza tecnicamente os elementos que compõem a solução proposta.
+O conteúdo organiza tecnicamente os elementos que compõem a solução proposta. **Não representa uma configuração executada no ambiente do Microsoft Copilot Studio.**
 
 ## 2. Criação do agente
 
@@ -18,23 +18,29 @@ Os tópicos organizam partes específicas da conversa. A documentação oficial 
 
 [Microsoft Learn — Criar e editar tópicos](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-create-edit-topics)
 
-## 4. Gatilhos
+## 4. Gatilhos e orquestração
 
-Os gatilhos determinam condições pelas quais um tópico pode ser acionado. Os mecanismos disponíveis dependem da configuração de orquestração e do tipo de evento utilizado.
+Os gatilhos determinam condições pelas quais um tópico pode ser acionado. O comportamento disponível depende do tipo de orquestração e do evento utilizado.
 
-[Microsoft Learn — Gatilhos de tópicos](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers)
+A documentação atual do Copilot Studio apresenta diferentes mecanismos de acionamento, incluindo gatilhos baseados em frases do usuário e mecanismos em que a orquestração seleciona o tópico apropriado. Portanto, este projeto não assume uma configuração específica de gatilho como se tivesse sido implementada.
+
+[Microsoft Learn — Gatilhos](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-triggers)
 
 ## 5. Mensagens de erro e fallback
 
-O tópico de fallback pode tratar situações nas quais a entrada do usuário não resulta em um encaminhamento adequado. A documentação da Microsoft também descreve a variável `UnrecognizedTriggerPhrase` para representar uma entrada não reconhecida.
+O tópico de fallback pode tratar situações nas quais a entrada do usuário não resulta em um encaminhamento adequado. A documentação da Microsoft também descreve o tratamento de frases não reconhecidas.
 
 [Microsoft Learn — Tópico de fallback do sistema](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-system-fallback-topic)
+
+O conceito de fallback utilizado neste projeto deve ser interpretado como referência técnica da plataforma. O comportamento específico do agente documentado aqui continua sendo uma decisão de projeto não executada.
 
 ## 6. IA generativa
 
 O Copilot Studio oferece recursos de orquestração generativa. Esses recursos podem permitir que o agente selecione tópicos, ferramentas e conhecimento de acordo com a solicitação e as descrições disponíveis.
 
-[Microsoft Learn — Ações generativas](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions)
+[Microsoft Learn — Recursos de IA no Copilot Studio](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/guidance/ai-capabilities)
+
+A utilização efetiva de orquestração generativa neste projeto **não foi implementada nem testada**.
 
 ## 7. Aplicação ao cenário documentado
 
@@ -44,9 +50,11 @@ No cenário deste projeto, os conceitos são organizados da seguinte forma:
 |---|---|
 | Agente | Assistente de Atendimento e Suporte |
 | Tópicos | Dúvidas, Suporte, Informações e encerramento |
-| Gatilhos | Entradas que direcionam a conversa |
-| Fallback | Tratamento de entradas não reconhecidas ou fora do fluxo esperado |
-| IA generativa | Apoio à produção de respostas quando aplicável |
+| Gatilhos | Entradas que podem direcionar a conversa, dependendo da configuração adotada |
+| Entrada ambígua | Solicitação de esclarecimento antes de nova identificação da necessidade |
+| Fora do escopo | Mensagem de limitação e orientação sobre os caminhos disponíveis |
+| Fallback | Referência técnica para tratamento de entradas não reconhecidas |
+| IA generativa | Possibilidade técnica de orquestração e geração de respostas, não implementada no projeto |
 
 ## 8. Relação com os demais documentos
 
@@ -55,6 +63,13 @@ No cenário deste projeto, os conceitos são organizados da seguinte forma:
 - [Requisitos](../05-requisitos/README.md)
 - [Testes](../06-testes/README.md)
 - [Resultados](../07-resultados/README.md)
+
+## 9. Limitações
+
+- Não há acesso ao ambiente original utilizado no desafio.
+- Não existe evidência funcional de uma configuração real do agente.
+- Os nomes de tópicos, caminhos e comportamentos do cenário são decisões de projeto.
+- Procedimentos de interface e recursos da plataforma podem mudar; a documentação oficial atual deve ser consultada antes de uma implementação real.
 
 ---
 
