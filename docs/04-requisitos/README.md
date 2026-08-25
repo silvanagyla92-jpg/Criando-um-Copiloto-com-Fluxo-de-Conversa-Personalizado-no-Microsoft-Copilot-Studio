@@ -1,3 +1,9 @@
+# Arquivo legado — Requisitos
+
+> **Aviso de organização:** o conteúdo desta pasta foi preservado para não perder histórico. A versão ativa e numerada da especificação está em [`../05-requisitos/README.md`](../05-requisitos/README.md).
+
+---
+
 # 4. Requisitos do Projeto
 
 ## 4.1 Objetivo
@@ -11,9 +17,9 @@ Os requisitos representam a especificação conceitual do agente **Assistente de
 - **RF — Requisito Funcional:** descreve uma função ou comportamento esperado do agente.
 - **RNF — Requisito Não Funcional:** descreve uma característica de qualidade, restrição ou condição de funcionamento.
 
-# 4.3 Requisitos Funcionais
+## 4.3 Requisitos Funcionais
 
-## RF-01 — Iniciar atendimento
+### RF-01 — Iniciar atendimento
 
 O agente deve permitir o início de uma interação com o usuário.
 
@@ -21,95 +27,93 @@ O agente deve permitir o início de uma interação com o usuário.
 
 **Resultado esperado:** iniciar o fluxo de atendimento.
 
-## RF-02 — Apresentar saudação
+### RF-02 — Apresentar saudação
 
 O agente deve apresentar uma mensagem inicial adequada ao contexto. A mensagem deve apresentar o agente, indicar sua finalidade e orientar o usuário sobre as possibilidades de atendimento.
 
-## RF-03 — Identificar a necessidade
+### RF-03 — Identificar a necessidade
 
 O agente deve identificar a necessidade apresentada pelo usuário. As categorias previstas são Dúvidas, Suporte, Informações e Fora do escopo.
 
-## RF-04 — Atender dúvidas
+### RF-04 — Atender dúvidas
 
 O agente deve permitir o tratamento de perguntas e solicitações de esclarecimento relacionadas ao escopo definido.
 
-## RF-05 — Prestar suporte
+### RF-05 — Prestar suporte
 
 O agente deve permitir o tratamento de solicitações relacionadas a problemas ou dificuldades. O fluxo deve solicitar as informações necessárias e apresentar orientação compatível com o cenário.
 
-## RF-06 — Fornecer informações
+### RF-06 — Fornecer informações
 
 O agente deve permitir o atendimento de solicitações de informações gerais relacionadas ao escopo do projeto.
 
-## RF-07 — Solicitar esclarecimentos
+### RF-07 — Solicitar esclarecimentos
 
 Quando a entrada do usuário não for suficientemente clara, o agente deve solicitar informações adicionais.
 
-**Exemplo:** "Preciso resolver isso." → "Pode me explicar qual problema ou informação você precisa?"
-
-## RF-08 — Tratar solicitações fora do escopo
+### RF-08 — Tratar solicitações fora do escopo
 
 O agente deve possuir comportamento definido para solicitações não relacionadas ao escopo. Deve informar sua limitação e evitar apresentar uma resposta como se possuísse conhecimento ou capacidade não disponíveis.
 
-## RF-09 — Permitir continuidade
+### RF-09 — Permitir continuidade
 
-Após uma interação, o agente deve permitir que o usuário apresente uma nova solicitação. Caso o usuário responda positivamente à pergunta de continuidade, o fluxo deve retornar à identificação da necessidade.
+Após uma interação, o agente deve permitir que o usuário apresente uma nova solicitação.
 
-## RF-10 — Encerrar atendimento
+### RF-10 — Encerrar atendimento
 
 O agente deve permitir o encerramento da conversa quando o usuário não desejar continuar.
 
-## RF-11 — Considerar contexto da interação
+### RF-11 — Considerar contexto da interação
 
-Quando aplicável à implementação futura, o fluxo deve considerar o contexto da conversa para evitar solicitações desnecessariamente repetitivas. A forma exata de implementação depende da plataforma e da configuração utilizada.
+Quando aplicável à implementação futura, o fluxo deve considerar o contexto da conversa. A forma exata de implementação depende da plataforma e da configuração utilizada.
 
-## RF-12 — Responder de acordo com o escopo
+### RF-12 — Responder de acordo com o escopo
 
-O agente deve priorizar respostas relacionadas à finalidade definida para o projeto. Quando não houver informação suficiente, deve comunicar a limitação em vez de inventar informações.
+O agente deve priorizar respostas relacionadas à finalidade definida para o projeto e comunicar limitações quando não houver informação suficiente.
 
-# 4.4 Requisitos Não Funcionais
+## 4.4 Requisitos Não Funcionais
 
-## RNF-01 — Clareza
+### RNF-01 — Clareza
 
 As respostas devem utilizar linguagem clara e compreensível.
 
-## RNF-02 — Objetividade
+### RNF-02 — Objetividade
 
-As respostas devem evitar informações desnecessárias e manter foco na solicitação apresentada.
+As respostas devem manter foco na solicitação apresentada.
 
-## RNF-03 — Consistência
+### RNF-03 — Consistência
 
-O agente deve manter comportamento e tom de comunicação coerentes ao longo da interação.
+O agente deve manter comportamento e tom de comunicação coerentes.
 
-## RNF-04 — Escalabilidade
+### RNF-04 — Escalabilidade
 
-A estrutura deve permitir a inclusão de novos caminhos conversacionais no futuro.
+A estrutura deve permitir a inclusão de novos caminhos conversacionais.
 
-## RNF-05 — Manutenibilidade
+### RNF-05 — Manutenibilidade
 
-Os fluxos devem ser organizados de forma que alterações futuras possam ser realizadas de maneira estruturada.
+Os fluxos devem ser organizados para permitir alterações futuras.
 
-## RNF-06 — Rastreabilidade
+### RNF-06 — Rastreabilidade
 
 Cada requisito deve poder ser relacionado a pelo menos um fluxo ou caso de teste.
 
-## RNF-07 — Confiabilidade das informações
+### RNF-07 — Confiabilidade das informações
 
 O agente não deve apresentar como fato uma informação que não possua fundamentação adequada.
 
-## RNF-08 — Tratamento de incerteza
+### RNF-08 — Tratamento de incerteza
 
-Quando não houver informação suficiente para responder, o comportamento esperado é comunicar a limitação.
+Quando não houver informação suficiente para responder, deve comunicar a limitação.
 
-## RNF-09 — Segurança conceitual
+### RNF-09 — Segurança conceitual
 
-O agente não deve ser projetado para produzir respostas deliberadamente enganosas ou apresentar capacidades inexistentes como se fossem reais.
+O agente não deve ser projetado para produzir respostas deliberadamente enganosas ou apresentar capacidades inexistentes como reais.
 
-## RNF-10 — Transparência
+### RNF-10 — Transparência
 
 As limitações do agente devem ser identificáveis na documentação.
 
-# 4.5 Matriz de rastreabilidade
+## 4.5 Matriz de rastreabilidade
 
 | Requisito | Fluxo relacionado | Caso de teste |
 |---|---|---|
@@ -136,7 +140,7 @@ As limitações do agente devem ser identificáveis na documentação.
 | RNF-09 | Todos os fluxos | Verificação conceitual |
 | RNF-10 | Documentação | Verificação documental |
 
-# 4.6 Prioridade
+## 4.6 Prioridade
 
 | Prioridade | Significado |
 |---|---|
@@ -156,54 +160,21 @@ RF-11, RF-12, RNF-01, RNF-02, RNF-03, RNF-06, RNF-07 e RNF-08.
 
 RNF-04, RNF-05, RNF-09 e RNF-10.
 
-# 4.7 Critérios de aceitação
+## 4.7 Critérios de aceitação
 
-Uma futura implementação deverá:
+Uma futura implementação deverá permitir iniciar a conversa, apresentar saudação, direcionar solicitações, tratar Dúvidas, Suporte, Informações, entradas ambíguas e fora do escopo, permitir continuidade e encerramento e manter clareza e consistência.
 
-1. permitir iniciar uma conversa;
-2. apresentar uma saudação adequada;
-3. direcionar a solicitação para o caminho correspondente;
-4. permitir o fluxo de Dúvidas;
-5. permitir o fluxo de Suporte;
-6. permitir o fluxo de Informações;
-7. tratar entradas ambíguas com solicitação de esclarecimento;
-8. tratar entradas fora do escopo adequadamente;
-9. permitir continuidade;
-10. permitir encerramento;
-11. manter clareza e consistência;
-12. evitar apresentar informações sem fundamentação como fatos.
+## 4.8 Status dos requisitos
 
-# 4.8 Status dos requisitos
+Os requisitos encontram-se nos estados **Conceitual** ou **Planejado**. Nenhum deve ser classificado como Implementado ou Testado sem evidência de execução.
 
-| Status | Significado |
-|---|---|
-| Conceitual | Definido na documentação |
-| Planejado | Previsto para futura implementação |
-| Implementado | Implementado em ambiente real |
-| Testado | Validado por execução |
-| Não confirmado | Não há evidência suficiente |
+## 4.9 Limitações
 
-### Status atual
-
-Os requisitos deste documento encontram-se nos estados **Conceitual** ou **Planejado**.
-
-Nenhum requisito deve ser classificado como **Implementado** ou **Testado**, pois não foi realizada uma implementação funcional no Microsoft Copilot Studio.
-
-# 4.9 Limitações
-
-A especificação não foi derivada de uma aplicação funcional. Portanto:
-
-- os requisitos são uma proposta de projeto;
-- os casos de teste são planejados;
-- os critérios de aceitação são previstos;
-- não existem métricas reais de desempenho;
-- não existem resultados de execução.
+A especificação é conceitual e não foi derivada de uma aplicação funcional. Não existem métricas reais de desempenho ou resultados de execução.
 
 ## 4.10 Observação
 
-Os requisitos foram elaborados com auxílio de Inteligência Artificial e submetidos a análise crítica. As decisões específicas do projeto foram diferenciadas das características dependentes da plataforma.
-
-Este documento deve ser interpretado como uma **especificação conceitual** para fins de documentação técnica e estudo.
+Os requisitos foram elaborados com auxílio de Inteligência Artificial e submetidos a análise crítica.
 
 ---
 
