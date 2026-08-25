@@ -1,72 +1,67 @@
-# 7. Resultados
+# 07 — Resultados
 
-## 7.1 Situação atual
+## 1. Resultado da documentação
 
-Este projeto apresenta **resultados documentais e conceituais**, não resultados de execução de um agente funcional.
+O projeto apresenta uma documentação técnica estruturada para o cenário de **Assistente de Atendimento e Suporte**, organizada em arquitetura, fluxo conversacional, configuração conceitual, requisitos, testes, diagramas, referências e registros do uso de Inteligência Artificial.
 
-A documentação registra o cenário proposto, sua arquitetura, fluxo conversacional, requisitos, plano de testes, prompts e critérios de evidência.
+## 2. Resultados documentais
 
-## 7.2 Resultado documental
-
-A estrutura atual permite:
+A documentação consolidada permite:
 
 - explicar o cenário do agente;
-- documentar a arquitetura conceitual;
+- apresentar a arquitetura conceitual;
 - descrever o fluxo conversacional;
 - especificar requisitos funcionais e não funcionais;
-- registrar casos de teste planejados;
+- organizar casos de teste;
 - documentar o uso de Inteligência Artificial no processo;
 - organizar referências técnicas oficiais;
-- distinguir evidências disponíveis de evidências ainda inexistentes.
+- apresentar os diagramas da solução;
+- estabelecer rastreabilidade entre requisitos, fluxos e testes.
 
-## 7.3 Interpretação técnica
+## 3. Resultados visuais
 
-Os elementos conceituais descritos são compatíveis com conceitos documentados do Microsoft Copilot Studio, como tópicos, mecanismos de acionamento e fallback. Essa compatibilidade técnica **não comprova que a configuração específica deste projeto tenha sido executada na plataforma**.
+Os diagramas produzidos para o projeto estão disponíveis em [`diagramas/`](../../diagramas/):
 
-As referências oficiais utilizadas para fundamentação estão disponíveis em [`referencias/README.md`](../../referencias/README.md).
+- [`arquitetura-conceitual.png`](../../diagramas/arquitetura-conceitual.png)
+- [`fluxo-conversacional.png`](../../diagramas/fluxo-conversacional.png)
 
-## 7.4 Evidências necessárias para uma futura implementação
+## 4. Resultados de estruturação
 
-Caso o agente seja implementado posteriormente, a documentação final poderá incluir capturas reais que demonstrem:
+A documentação foi organizada em uma sequência lógica:
 
-- criação do agente;
-- tópico personalizado;
-- fluxo conversacional;
-- tratamento da entrada não reconhecida, quando aplicável;
-- configuração relacionada às respostas com IA generativa, quando aplicável;
-- execução dos testes;
-- resultados observados.
+```text
+Metodologia
+    ↓
+Arquitetura
+    ↓
+Fluxo conversacional
+    ↓
+Configuração
+    ↓
+Requisitos
+    ↓
+Testes
+    ↓
+Resultados
+```
 
-Esses materiais deverão ser armazenados e identificados em [`evidencias/`](../../evidencias/).
+Essa organização facilita a navegação, a rastreabilidade e a compreensão do cenário documentado.
 
-## 7.5 Critério de validação
+## 5. Uso de Inteligência Artificial
 
-Um resultado específico da implementação somente deve ser considerado comprovado quando puder ser relacionado a:
+A Inteligência Artificial foi utilizada como ferramenta de apoio à concepção, redação, organização, análise crítica e revisão dos artefatos.
 
-1. uma evidência real do projeto; ou
-2. uma fonte oficial que sustente exclusivamente o conceito técnico afirmado.
+Os prompts e o processo de utilização da IA estão registrados em [`prompts/`](../../prompts/).
 
-Uma fonte oficial de produto não deve ser usada para comprovar uma configuração específica que não foi observada no projeto.
+## 6. Fundamentação técnica
 
-## 7.6 Status
+Os conceitos relacionados ao Microsoft Copilot Studio foram confrontados com documentação oficial da Microsoft. As referências utilizadas estão organizadas em [`referencias/`](../../referencias/).
 
-| Item | Status |
-|---|---|
-| Documentação conceitual | Concluída nesta etapa |
-| Arquitetura conceitual | Documentada |
-| Fluxo conversacional | Documentado |
-| Requisitos | Documentados |
-| Casos de teste | Planejados |
-| Execução dos testes | Não realizada |
-| Evidências funcionais | Não disponíveis |
-| PNG de diagrama | Ainda não disponível |
-| Implementação no Copilot Studio | Não confirmada neste projeto documental |
+## 7. Síntese
 
-## 7.7 Limitações
+O resultado final é um conjunto integrado de artefatos técnicos que apresenta, de forma clara e organizada, um cenário de agente conversacional com fluxo personalizado.
 
-Não devem ser atribuídos ao projeto resultados funcionais, métricas de desempenho ou configurações específicas sem evidência correspondente.
-
-O conteúdo desta seção deve ser atualizado caso sejam obtidas novas evidências ou realizada uma implementação real.
+A documentação conecta conceito, arquitetura, fluxo, requisitos, testes, diagramas e referências em uma estrutura única de projeto.
 
 ---
 
