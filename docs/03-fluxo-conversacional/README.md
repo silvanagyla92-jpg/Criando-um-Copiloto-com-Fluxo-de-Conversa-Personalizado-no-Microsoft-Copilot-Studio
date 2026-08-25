@@ -39,3 +39,15 @@ Quando a entrada não corresponde adequadamente a um tópico, o sistema pode usa
 ## Relação com o projeto
 
 O README original informa que o desafio envolveu a criação de um Copilot em branco, a customização de um tópico, a personalização de mensagem de erro e o ajuste da qualidade das respostas com GenAI. Essas afirmações são tratadas como descrição do projeto e devem ser complementadas por evidências visuais na entrega final.
+
+---
+
+**Projeto:** Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado
+
+**Autora:** Nágyla Silva
+
+Projeto integrante do portfólio prático em Inteligência Artificial,
+desenvolvido para demonstrar competências em treinamento e avaliação de
+sistemas de IA, análise crítica de respostas e anotação de dados, aplicadas às
+funções de AI Trainer, AI Response Evaluator e Data Annotator, com base em
+experiência em QA e Auditoria.
