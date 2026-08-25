@@ -6,38 +6,40 @@ Esta pasta reúne os diagramas utilizados para explicar visualmente a solução 
 
 Os diagramas facilitam a compreensão da arquitetura e do fluxo conversacional definidos para o cenário de Assistente de Atendimento e Suporte.
 
-Eles representam decisões e modelos conceituais elaborados para este projeto.
+Eles representam decisões e modelos conceituais elaborados para este projeto e **não constituem evidência de implementação no Microsoft Copilot Studio**.
 
 ## 2. Diagrama de arquitetura conceitual
 
 ![Arquitetura conceitual](./arquitetura-conceitual.png)
 
-O diagrama apresenta, em alto nível, a relação entre usuário, interface, agente conversacional, identificação da necessidade, caminhos de atendimento, resposta e encerramento ou continuidade.
+O diagrama apresenta, em alto nível, a relação entre usuário, interface de interação, agente conversacional, identificação da necessidade, caminhos de atendimento, tratamento de entrada ambígua, resposta e encerramento ou continuidade.
 
 ### Interpretação
 
 - **Usuário:** inicia a interação e fornece a solicitação.
-- **Interface:** representa o ponto de entrada e saída da conversa.
+- **Interface de interação:** representa, de forma abstrata, o ponto de entrada e saída da conversa.
 - **Agente conversacional:** recebe e processa a solicitação segundo o cenário definido.
 - **Identificação da necessidade:** determina o caminho conceitual da conversa.
 - **Dúvidas:** trata perguntas e esclarecimentos.
 - **Suporte:** trata problemas e solicitações de assistência.
 - **Informações:** trata solicitações informativas dentro do cenário.
-- **Fora do escopo:** trata solicitações que não pertencem à finalidade definida.
+- **Entrada ambígua:** indica que a intenção não pôde ser identificada com segurança.
+- **Solicitar esclarecimento:** pede informações adicionais antes de nova identificação da necessidade.
 - **Resposta:** apresenta a orientação correspondente.
 - **Continuar:** permite uma nova solicitação.
 - **Encerrar:** finaliza a interação.
+- **Fora do escopo:** representa uma condição tratada conceitualmente por mensagem de limitação e orientação sobre os caminhos disponíveis.
 
 ## 3. Diagrama do fluxo conversacional
 
 ![Fluxo conversacional](./fluxo-conversacional.png)
 
-O fluxo representa a sequência desde o início da interação até a identificação da necessidade, o direcionamento para um caminho de atendimento, a resposta e a continuidade ou encerramento.
+O fluxo representa a sequência desde o início da interação até a identificação da necessidade, o direcionamento para um caminho de atendimento, o tratamento de entradas ambíguas ou fora do escopo, a resposta e a continuidade ou encerramento.
 
 ### Fluxos alternativos
 
 1. **Entrada ambígua:** o agente solicita esclarecimentos antes de escolher um caminho.
-2. **Fora do escopo:** o agente orienta o usuário sobre os caminhos disponíveis.
+2. **Fora do escopo:** o agente informa a limitação e orienta o usuário sobre os caminhos disponíveis.
 3. **Continuidade:** o usuário apresenta uma nova solicitação e o fluxo retorna à identificação da necessidade.
 4. **Encerramento:** o usuário sinaliza que não deseja continuar e a interação é finalizada.
 
@@ -59,12 +61,15 @@ O fluxo representa a sequência desde o início da interação até a identifica
 | `fluxo-conversacional.png` | Representação visual do fluxo de atendimento |
 | `README.md` | Descrição, interpretação e relação dos diagramas com a documentação |
 
+Os arquivos PNG são gerados pelo script `scripts/gerar_diagramas.py` e versionados pelo workflow do GitHub Actions.
+
 ## 6. Referências técnicas
 
 Para afirmações sobre recursos específicos do Microsoft Copilot Studio, deve-se priorizar a documentação oficial da Microsoft Learn.
 
+- [Microsoft Copilot Studio — documentação oficial](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/)
 - [Criar e editar tópicos — Microsoft Learn](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-create-edit-topics)
-- [Gatilhos de tópicos — Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/triggering-topics)
+- [Gatilhos — Microsoft Learn](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-triggers)
 - [Tópico de fallback do sistema — Microsoft Learn](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-system-fallback-topic)
 
 Essas referências fundamentam conceitos da plataforma; os diagramas representam decisões de projeto elaboradas para este repositório.
