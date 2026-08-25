@@ -22,3 +22,15 @@ A documentação final deve incluir capturas reais que demonstrem:
 ## Critério de validação
 
 O resultado deve ser considerado documentado quando cada afirmação específica sobre a implementação puder ser relacionada a uma evidência do projeto ou a uma fonte oficial do produto.
+
+---
+
+**Projeto:** Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado
+
+**Autora:** Nágyla Silva
+
+Projeto integrante do portfólio prático em Inteligência Artificial,
+desenvolvido para demonstrar competências em treinamento e avaliação de
+sistemas de IA, análise crítica de respostas e anotação de dados, aplicadas às
+funções de AI Trainer, AI Response Evaluator e Data Annotator, com base em
+experiência em QA e Auditoria.
