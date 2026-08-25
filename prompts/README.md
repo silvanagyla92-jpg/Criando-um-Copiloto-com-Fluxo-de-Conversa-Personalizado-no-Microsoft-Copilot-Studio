@@ -87,11 +87,13 @@ atendimento e suporte.
 
 Mostre a relação entre:
 - usuário;
+- interface de interação;
 - agente conversacional;
 - identificação da necessidade;
 - Dúvidas;
 - Suporte;
 - Informações;
+- entrada ambígua;
 - tratamento fora do escopo;
 - resposta;
 - continuidade;
@@ -101,7 +103,7 @@ Deixe explícito que se trata de uma arquitetura conceitual e não de uma
 configuração comprovada no Microsoft Copilot Studio.
 ```
 
-**Finalidade:** apoiar `docs/02-arquitetura/`.
+**Finalidade:** apoiar `docs/02-arquitetura/` e o diagrama de arquitetura conceitual.
 
 ---
 
@@ -117,8 +119,9 @@ Inclua:
 - Dúvidas;
 - Suporte;
 - Informações;
+- entrada ambígua;
+- solicitação de esclarecimento;
 - fora do escopo;
-- entradas ambíguas;
 - continuidade;
 - encerramento;
 - exemplos de diálogos;
@@ -147,7 +150,7 @@ Não classifique como implementado ou testado aquilo que não tenha sido
 executado em ambiente real.
 ```
 
-**Finalidade:** apoiar `docs/04-requisitos/` e sua matriz de rastreabilidade.
+**Finalidade:** apoiar `docs/05-requisitos/` e sua matriz de rastreabilidade.
 
 ---
 
@@ -170,7 +173,7 @@ Como não existe implementação funcional disponível, marque os testes como
 "Planejado — não executado" e não invente resultados ou evidências.
 ```
 
-**Finalidade:** apoiar `docs/05-testes/` sem transformar resultados esperados em resultados reais.
+**Finalidade:** apoiar `docs/06-testes/` sem transformar resultados esperados em resultados reais.
 
 ---
 
@@ -254,10 +257,10 @@ Por esse motivo, os prompts deste documento não são evidência de que o agente
 |---|---|
 | Prompt 01 | Definição do cenário |
 | Prompt 02 | Especificação técnica |
-| Prompt 03 | `docs/02-arquitetura/` |
-| Prompt 04 | `docs/03-fluxo-conversacional/` |
-| Prompt 05 | `docs/04-requisitos/` |
-| Prompt 06 | `docs/05-testes/` |
+| Prompt 03 | `docs/02-arquitetura/` e diagrama de arquitetura |
+| Prompt 04 | `docs/03-fluxo-conversacional/` e diagrama de fluxo |
+| Prompt 05 | `docs/05-requisitos/` |
+| Prompt 06 | `docs/06-testes/` |
 | Prompt 07 | Análise crítica transversal |
 | Prompt 08 | Validação das afirmações técnicas |
 | Prompt 09 | Padronização da documentação |
