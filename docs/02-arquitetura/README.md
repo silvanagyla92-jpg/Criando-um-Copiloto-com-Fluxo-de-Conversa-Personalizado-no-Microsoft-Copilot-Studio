@@ -15,24 +15,33 @@ O modelo foi elaborado para fins de documentação e estudo. Ele não representa
                                     │
                                     ▼
                          ┌─────────────────────┐
-                         │       Agente        │
-                         │   conversacional    │
+                         │ Interface de        │
+                         │ interação           │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │ Agente conversacional│
                          └──────────┬──────────┘
                                     │
                                     ▼
                     ┌────────────────────────────┐
-                    │ Orquestração e seleção de  │
-                    │ recursos                   │
+                    │ Identificação da necessidade│
                     └─────────────┬──────────────┘
                                   │
-              ┌───────────────────┼───────────────────┐
-              │                   │                   │
-              ▼                   ▼                   ▼
-        ┌────────────┐      ┌────────────┐      ┌──────────────┐
-        │  Dúvidas   │      │  Suporte   │      │ Informações  │
-        └─────┬──────┘      └─────┬──────┘      └──────┬───────┘
-              │                   │                    │
-              └───────────────────┼────────────────────┘
+              ┌───────────────────┼──────────────────────────┐
+              │                   │             │            │
+              ▼                   ▼             ▼            ▼
+        ┌────────────┐      ┌────────────┐ ┌──────────────┐ ┌────────────────┐
+        │  Dúvidas   │      │  Suporte   │ │ Informações  │ │ Entrada        │
+        └─────┬──────┘      └─────┬──────┘ └──────┬───────┘ │ ambígua        │
+              │                   │               │         └───────┬────────┘
+              │                   │               │                 ▼
+              │                   │               │        ┌────────────────┐
+              │                   │               │        │ Esclarecimento │
+              │                   │               │        └───────┬────────┘
+              │                   │               │                │
+              └───────────────────┼───────────────┼────────────────┘
                                   ▼
                          ┌─────────────────────┐
                          │      Resposta       │
@@ -42,31 +51,38 @@ O modelo foi elaborado para fins de documentação e estudo. Ele não representa
                        │                         │
                        ▼                         ▼
                 Nova solicitação           Encerramento
+
+Fora do escopo: quando identificado, o agente informa a limitação e orienta
+sobre os caminhos disponíveis, sem representar uma configuração real.
 ```
 
 ## 2.3 Usuário
 
 O usuário representa a pessoa que interage com o agente. A interação pode começar por uma saudação, uma pergunta, uma solicitação de suporte ou um pedido de informação.
 
-## 2.4 Agente conversacional
+## 2.4 Interface de interação
+
+A interface representa, de forma conceitual, o ponto de entrada e saída da conversa entre o usuário e o agente. Ela não corresponde a uma interface específica comprovadamente configurada no Microsoft Copilot Studio.
+
+## 2.5 Agente conversacional
 
 O agente representa o componente responsável por conduzir a experiência conversacional. Neste projeto conceitual, foi definido o agente **Assistente de Atendimento e Suporte**.
 
-Seu objetivo é orientar o usuário em relação às três categorias definidas para o cenário:
+Seu objetivo é orientar o usuário em relação às categorias definidas para o cenário:
 
 - Dúvidas;
 - Suporte;
-- Informações.
+- Informações;
+- entrada ambígua;
+- fora do escopo.
 
-## 2.5 Orquestração e seleção de recursos
+## 2.6 Identificação da necessidade
 
-Esta camada representa, conceitualmente, o processo utilizado pelo agente para determinar quais recursos devem participar da resposta.
+Esta etapa representa a decisão conceitual sobre qual caminho deve ser seguido a partir da solicitação do usuário.
 
-Dependendo da configuração utilizada no Microsoft Copilot Studio, a orquestração pode envolver tópicos, ferramentas, fontes de conhecimento e outros recursos disponíveis para o agente.
+Uma entrada ambígua não é tratada como fora do escopo: primeiro deve ser solicitado esclarecimento e, depois, a necessidade deve ser identificada novamente.
 
-A implementação exata dessa camada não foi realizada neste projeto e, portanto, não é apresentada como configuração comprovada.
-
-## 2.6 Tópico de Dúvidas
+## 2.7 Tópico de Dúvidas
 
 Representa solicitações nas quais o usuário busca explicações ou esclarecimentos.
 
@@ -78,7 +94,7 @@ Representa solicitações nas quais o usuário busca explicações ou esclarecim
 
 **Resultado esperado:** fornecer uma resposta baseada nas informações disponíveis ou informar que não há dados suficientes para responder.
 
-## 2.7 Tópico de Suporte
+## 2.8 Tópico de Suporte
 
 Representa situações nas quais o usuário relata um problema ou solicita orientação.
 
@@ -90,7 +106,7 @@ Representa situações nas quais o usuário relata um problema ou solicita orien
 
 **Resultado esperado:** solicitar informações relevantes e apresentar orientações compatíveis com o escopo definido.
 
-## 2.8 Tópico de Informações
+## 2.9 Tópico de Informações
 
 Representa solicitações gerais sobre o serviço ou contexto do agente.
 
@@ -100,7 +116,17 @@ Representa solicitações gerais sobre o serviço ou contexto do agente.
 - "Quais serviços estão disponíveis?"
 - "Onde encontro informações?"
 
-## 2.9 Tratamento de entradas fora do escopo
+## 2.10 Tratamento de entradas ambíguas
+
+Quando a intenção do usuário não puder ser identificada com segurança, o fluxo conceitual prevê uma solicitação de esclarecimento antes do direcionamento.
+
+Exemplo:
+
+> Posso ajudar. Você precisa de esclarecimento, suporte ou informações?
+
+Esse comportamento é uma decisão de projeto e não representa uma configuração comprovada no Microsoft Copilot Studio.
+
+## 2.11 Tratamento de entradas fora do escopo
 
 O projeto prevê um caminho específico para solicitações que não estejam relacionadas ao escopo definido.
 
@@ -110,7 +136,15 @@ Exemplo:
 
 Esse comportamento é uma decisão de projeto e não representa uma configuração comprovada no Microsoft Copilot Studio.
 
-## 2.10 IA generativa
+## 2.12 Orquestração e seleção de recursos
+
+Esta camada representa, conceitualmente, o processo utilizado pelo agente para determinar quais recursos devem participar da resposta.
+
+Dependendo da configuração utilizada no Microsoft Copilot Studio, a orquestração pode envolver tópicos, ferramentas, fontes de conhecimento e outros recursos disponíveis para o agente.
+
+A implementação exata dessa camada não foi realizada neste projeto e, portanto, não é apresentada como configuração comprovada.
+
+## 2.13 IA generativa
 
 A IA generativa é considerada neste projeto como uma possibilidade de implementação para ampliar a capacidade de resposta do agente.
 
@@ -123,11 +157,11 @@ Entre os possíveis usos conceituais estão:
 
 A utilização efetiva desses recursos não foi implementada ou testada neste projeto.
 
-## 2.11 Encerramento
+## 2.14 Encerramento
 
 Após o atendimento, o usuário pode iniciar uma nova solicitação ou encerrar a conversa. Quando deseja continuar, o fluxo retorna à etapa de identificação da necessidade.
 
-## 2.12 Princípios arquiteturais
+## 2.15 Princípios arquiteturais
 
 ### Clareza
 
@@ -149,7 +183,7 @@ As decisões de projeto devem ser diferenciadas das funcionalidades efetivamente
 
 O agente não deve apresentar como fato uma informação que não possa ser sustentada pelas informações disponíveis.
 
-## 2.13 Limitações
+## 2.16 Limitações
 
 Esta arquitetura:
 
@@ -161,15 +195,17 @@ Esta arquitetura:
 
 Portanto, deve ser interpretada como uma **arquitetura conceitual para fins de documentação e estudo**.
 
-## 2.14 Classificação das informações
+## 2.17 Classificação das informações
 
 | Elemento | Classificação |
 |---|---|
 | Usuário | Conceito do projeto |
+| Interface de interação | Abstração conceitual |
 | Assistente de Atendimento e Suporte | Decisão de projeto |
 | Dúvidas | Decisão de projeto |
 | Suporte | Decisão de projeto |
 | Informações | Decisão de projeto |
+| Entrada ambígua | Decisão de projeto |
 | Tratamento fora do escopo | Decisão de projeto |
 | Orquestração | Conceito técnico que depende da implementação |
 | IA generativa | Recurso técnico documentado; uso neste projeto não confirmado |
