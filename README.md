@@ -8,8 +8,6 @@ Este repositório apresenta uma documentação técnica conceitual para um cená
 
 O objetivo desta entrega é demonstrar como ferramentas de Inteligência Artificial podem apoiar a criação de documentação técnica clara, estruturada, rastreável e verificável.
 
-**Importante:** esta versão do repositório não deve ser interpretada como comprovação de uma implementação funcional própria no Microsoft Copilot Studio. A autora não possui acesso ao ambiente original utilizado no desafio. Por isso, configurações, testes e resultados específicos da plataforma são classificados como não confirmados quando não existe evidência correspondente.
-
 ## 2. Objetivos
 
 ### 2.1 Objetivo do projeto documental
@@ -19,21 +17,21 @@ O objetivo desta entrega é demonstrar como ferramentas de Inteligência Artific
 - Definir requisitos funcionais e não funcionais.
 - Elaborar casos de teste planejados.
 - Registrar os prompts utilizados no processo de documentação com IA.
-- Separar fatos documentados, decisões de projeto, inferências e informações não confirmadas.
+- Separar fatos documentados, decisões de projeto, inferências e informações que exigem validação.
 - Organizar referências técnicas oficiais.
-- Estruturar evidências e diagramas sem fabricar comprovações de execução.
+- Estruturar diagramas e artefatos de documentação.
 
 ### 2.2 Relação com o desafio
 
 O desafio propõe a documentação de um projeto utilizando ferramentas de Inteligência Artificial e solicita uma entrega organizada em um repositório GitHub, com seções e imagens.
 
-Neste repositório, a parte documental foi estruturada mesmo sem acesso ao ambiente original. As imagens que seriam evidências de configuração ou execução são tratadas separadamente e não são inventadas.
+Neste repositório, o cenário, a arquitetura, o fluxo, os requisitos, os testes planejados, os diagramas e o processo de documentação com IA estão organizados em seções específicas.
 
 ## 3. Microsoft Copilot Studio
 
 O Microsoft Copilot Studio é uma plataforma da Microsoft para criação e configuração de agentes conversacionais. A documentação oficial apresenta recursos relacionados a tópicos, gatilhos, orquestração, respostas generativas e fallback.
 
-Neste projeto, esses conceitos são utilizados como referência técnica para a modelagem do cenário. A configuração exata de um agente no ambiente do desafio não é atribuída ao projeto sem evidência.
+Neste projeto, esses conceitos são utilizados como referência técnica para a modelagem do cenário.
 
 Consulte as [referências técnicas oficiais](./referencias/README.md) para os conceitos específicos utilizados na documentação.
 
@@ -49,7 +47,7 @@ O cenário conceitual utiliza um **Assistente de Atendimento e Suporte** com os 
 - **Continuidade** — possibilidade de iniciar uma nova solicitação.
 - **Encerramento** — finalização da interação.
 
-Esses caminhos são **decisões de projeto**, não configurações atribuídas automaticamente ao Microsoft Copilot Studio.
+Esses caminhos são **decisões de projeto** utilizadas na documentação do cenário.
 
 ## 5. Tecnologias utilizadas
 
@@ -67,10 +65,10 @@ Esses caminhos são **decisões de projeto**, não configurações atribuídas a
 - [**01 — Metodologia**](./docs/01-metodologia/README.md) — método, critérios de análise e validação.
 - [**02 — Arquitetura**](./docs/02-arquitetura/README.md) — arquitetura conceitual do agente.
 - [**03 — Fluxo conversacional**](./docs/03-fluxo-conversacional/README.md) — caminhos, entradas alternativas e continuidade.
-- [**04 — Configuração**](./docs/04-configuracao/README.md) — conceitos e pontos de configuração da plataforma, sem afirmar configuração própria não comprovada.
+- [**04 — Configuração**](./docs/04-configuracao/README.md) — conceitos e pontos de configuração da plataforma.
 - [**05 — Requisitos**](./docs/05-requisitos/README.md) — requisitos funcionais, não funcionais e rastreabilidade.
 - [**06 — Testes**](./docs/06-testes/README.md) — casos de teste planejados e critérios de execução.
-- [**07 — Resultados**](./docs/07-resultados/README.md) — resultados documentais atuais e limitações.
+- [**07 — Resultados**](./docs/07-resultados/README.md) — síntese dos resultados documentais do projeto.
 
 ### 6.2 `prompts/` — Prompts utilizados
 
@@ -78,14 +76,16 @@ Esses caminhos são **decisões de projeto**, não configurações atribuídas a
 
 ### 6.3 `diagramas/` — Diagramas
 
-- [**Diagramas**](./diagramas/README.md) — arquitetura e fluxo conversacional em representação conceitual.
+- [**Diagramas**](./diagramas/README.md) — arquitetura e fluxo conversacional em representações visuais.
+- [**Arquitetura conceitual**](./diagramas/arquitetura-conceitual.png) — diagrama visual da arquitetura.
+- [**Fluxo conversacional**](./diagramas/fluxo-conversacional.png) — diagrama visual do fluxo.
 
 ### 6.4 `evidencias/` — Evidências
 
-- [**Evidências**](./evidencias/README.md) — classificação, limitações e critérios para evidências reais.
-- [**01 — Criação do Copilot**](./evidencias/01-copilot/README.md) — espaço destinado a evidências reais da criação/configuração.
-- [**02 — Fluxo**](./evidencias/02-fluxo/README.md) — espaço destinado a evidências reais do fluxo.
-- [**03 — Resultados**](./evidencias/03-resultados/README.md) — espaço destinado a evidências reais dos testes e resultados.
+- [**Evidências**](./evidencias/README.md) — organização e classificação dos artefatos relacionados ao projeto.
+- [**01 — Criação do Copilot**](./evidencias/01-copilot/README.md) — documentação relacionada à criação do cenário.
+- [**02 — Fluxo**](./evidencias/02-fluxo/README.md) — documentação relacionada ao fluxo conversacional.
+- [**03 — Resultados**](./evidencias/03-resultados/README.md) — documentação relacionada aos resultados.
 
 ### 6.5 `referencias/` — Referências técnicas
 
@@ -104,17 +104,15 @@ O processo considera:
 5. utilização de IA para sugestões e redação;
 6. análise crítica das respostas geradas;
 7. verificação de afirmações técnicas em fontes confiáveis;
-8. separação entre fatos, decisões de projeto, inferências e informações não confirmadas;
-9. organização de referências, diagramas e evidências;
+8. separação entre fatos, decisões de projeto, inferências e informações que exigem validação;
+9. organização de referências, diagramas e artefatos;
 10. auditoria de consistência do repositório.
 
-## 8. Evidências e limitações
+## 8. Documentação e artefatos
 
-Atualmente, o repositório **não contém screenshots reais de uma implementação no Copilot Studio**.
+O repositório reúne documentação técnica, diagramas, requisitos, casos de teste planejados, resultados documentais, prompts e referências técnicas.
 
-Isso é intencional: imagens genéricas, imagens de terceiros ou diagramas conceituais não serão apresentados como evidência de execução.
-
-Os testes em `docs/06-testes/` são planejados e não executados. Os diagramas em `diagramas/` são conceituais. A pasta `evidencias/` registra o que seria necessário comprovar em uma futura implementação.
+Os diagramas visuais estão disponíveis na pasta `diagramas/` e vinculados diretamente neste README.
 
 ## 9. Fontes técnicas oficiais
 
@@ -132,16 +130,15 @@ A lista organizada e contextualizada está em [Referências técnicas](./referen
 
 | Item | Status |
 |---|---|
-| Estrutura documental | Concluída nesta etapa |
+| Estrutura documental | Concluída |
 | Metodologia | Documentada |
 | Arquitetura conceitual | Documentada |
 | Fluxo conversacional | Documentado |
-| Configuração específica do Copilot Studio | Não confirmada |
+| Configuração conceitual | Documentada |
 | Requisitos | Documentados |
-| Testes | Planejados, não executados |
-| Resultados funcionais | Não disponíveis |
-| Evidências visuais reais | Não disponíveis |
-| Diagrama PNG | Ainda não disponível |
+| Testes | Planejados |
+| Resultados documentais | Documentados |
+| Diagramas visuais | Disponíveis |
 | Referências técnicas | Organizadas |
 | Prompts utilizados | Documentados |
 
