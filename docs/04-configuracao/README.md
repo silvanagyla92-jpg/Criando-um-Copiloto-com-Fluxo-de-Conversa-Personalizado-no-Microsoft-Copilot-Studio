@@ -1,32 +1,60 @@
 # 04 — Configuração
 
-## Escopo
+## 1. Escopo
 
-Esta seção descreve conceitos e pontos de configuração relacionados ao desafio. Ela não substitui evidências do ambiente original.
+Esta seção descreve conceitos e pontos de configuração relacionados ao desafio e ao cenário documentado.
 
-## Criação do agente
+O conteúdo organiza tecnicamente os elementos que compõem a solução proposta.
 
-O Microsoft Copilot Studio fornece recursos para criar agentes e fluxos de trabalho. A documentação oficial reúne orientações de criação, teste, publicação, tópicos, conhecimento e ferramentas. [Microsoft Learn](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/)
+## 2. Criação do agente
 
-## Criação de tópico
+O Microsoft Copilot Studio fornece recursos para criação e configuração de agentes conversacionais. A documentação oficial reúne orientações sobre criação, teste, publicação, tópicos, conhecimento e ferramentas.
 
-Um tópico pode ser criado a partir de um modelo vazio. A documentação atual descreve o uso da página de tópicos, a opção de adicionar um tópico e a criação a partir do zero. [Microsoft Learn](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-create-edit-topics)
+[Microsoft Learn — Microsoft Copilot Studio](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/)
 
-## Gatilhos
+## 3. Criação de tópicos
 
-Os tipos de gatilho variam conforme a configuração de orquestração. Entre eles estão `The agent chooses`, `User says a phrase`, recebimento de mensagem e eventos relacionados à execução. [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers)
+Os tópicos organizam partes específicas da conversa. A documentação oficial descreve recursos para criar e editar tópicos, incluindo a criação de tópicos a partir de modelos ou de uma estrutura vazia.
 
-## Mensagens de erro e Fallback
+[Microsoft Learn — Criar e editar tópicos](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-create-edit-topics)
 
-O tópico de Fallback pode ser personalizado para tratar entradas que não acionam adequadamente um tópico. A Microsoft também documenta o uso da variável `UnrecognizedTriggerPhrase` para armazenar a entrada não reconhecida. [Microsoft Learn](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-system-fallback-topic)
+## 4. Gatilhos
 
-## IA generativa
+Os gatilhos determinam condições pelas quais um tópico pode ser acionado. Os mecanismos disponíveis dependem da configuração de orquestração e do tipo de evento utilizado.
 
-O Copilot Studio possui recursos de orquestração generativa. Na orquestração generativa, o agente pode selecionar tópicos, ferramentas e conhecimento com base na solicitação e nas descrições disponíveis. [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions)
+[Microsoft Learn — Gatilhos de tópicos](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers)
 
-## O que deve ser comprovado
+## 5. Mensagens de erro e fallback
 
-Para afirmar exatamente quais opções foram selecionadas no projeto original, devem ser adicionadas capturas de tela reais em `evidencias/`. Não são atribuídas ao projeto configurações que não estejam comprovadas.
+O tópico de fallback pode tratar situações nas quais a entrada do usuário não resulta em um encaminhamento adequado. A documentação da Microsoft também descreve a variável `UnrecognizedTriggerPhrase` para representar uma entrada não reconhecida.
+
+[Microsoft Learn — Tópico de fallback do sistema](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-system-fallback-topic)
+
+## 6. IA generativa
+
+O Copilot Studio oferece recursos de orquestração generativa. Esses recursos podem permitir que o agente selecione tópicos, ferramentas e conhecimento de acordo com a solicitação e as descrições disponíveis.
+
+[Microsoft Learn — Ações generativas](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions)
+
+## 7. Aplicação ao cenário documentado
+
+No cenário deste projeto, os conceitos são organizados da seguinte forma:
+
+| Elemento | Aplicação conceitual |
+|---|---|
+| Agente | Assistente de Atendimento e Suporte |
+| Tópicos | Dúvidas, Suporte, Informações e encerramento |
+| Gatilhos | Entradas que direcionam a conversa |
+| Fallback | Tratamento de entradas não reconhecidas ou fora do fluxo esperado |
+| IA generativa | Apoio à produção de respostas quando aplicável |
+
+## 8. Relação com os demais documentos
+
+- [Arquitetura](../02-arquitetura/README.md)
+- [Fluxo conversacional](../03-fluxo-conversacional/README.md)
+- [Requisitos](../05-requisitos/README.md)
+- [Testes](../06-testes/README.md)
+- [Resultados](../07-resultados/README.md)
 
 ---
 
