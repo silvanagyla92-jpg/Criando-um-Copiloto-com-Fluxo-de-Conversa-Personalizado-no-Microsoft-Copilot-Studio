@@ -20,7 +20,7 @@ O fluxo é composto por:
 6. Verificação da necessidade de continuidade;
 7. Nova solicitação ou encerramento.
 
-Os três caminhos principais são **Dúvidas**, **Suporte** e **Informações**. Também existe um caminho alternativo para solicitações fora do escopo.
+Os três caminhos principais são **Dúvidas**, **Suporte** e **Informações**. Também existem caminhos alternativos para **entrada ambígua** e para solicitações **fora do escopo**.
 
 ## 3.3 Fluxo principal
 
@@ -36,15 +36,18 @@ Saudação
    ▼
 Identificação da necessidade
    │
-   ├──────────────┬──────────────┬─────────────────┐
-   │              │              │                 │
-   ▼              ▼              ▼                 ▼
-Dúvidas        Suporte      Informações     Fora do escopo
-   │              │              │                 │
-   ▼              ▼              ▼                 ▼
-Responder      Orientar      Informar      Informar limitação
-   │              │              │                 │
-   └──────────────┴──────────────┴─────────────────┘
+   ├──────────────┬──────────────┬─────────────────┬──────────────────┐
+   │              │              │                 │                  │
+   ▼              ▼              ▼                 ▼                  ▼
+Dúvidas        Suporte      Informações     Entrada ambígua    Fora do escopo
+   │              │              │                 │                  │
+   ▼              ▼              ▼                 ▼                  ▼
+Responder      Orientar      Informar      Solicitar esclarec.  Informar limitação
+   │              │              │                 │                  │
+   │              │              │                 ▼                  │
+   │              │              │       Identificação da necessidade │
+   │              │              │                 │                  │
+   └──────────────┴──────────────┴─────────────────┴──────────────────┘
                           │
                           ▼
                  Precisa de mais ajuda?
@@ -56,6 +59,8 @@ Responder      Orientar      Informar      Informar limitação
                        │
                        └──────► Identificação da necessidade
 ```
+
+A **entrada ambígua** possui tratamento diferente de uma solicitação **fora do escopo**: no primeiro caso, o agente solicita esclarecimentos e retorna à identificação da necessidade; no segundo, informa a limitação de escopo.
 
 ## 3.4 Etapa 1 — Início
 
@@ -90,6 +95,7 @@ O agente deve identificar qual tipo de atendimento é mais adequado à solicita�
 | Dúvidas | Responder perguntas e esclarecer conceitos |
 | Suporte | Orientar sobre problemas ou dificuldades |
 | Informações | Apresentar informações gerais |
+| Entrada ambígua | Solicitar esclarecimentos antes de direcionar |
 | Fora do escopo | Tratar solicitações não relacionadas |
 
 A classificação apresentada é uma decisão de projeto.
@@ -344,6 +350,7 @@ Consequentemente, os resultados apresentados nesta documentação são **resulta
 |---|---|
 | Fluxo de conversa | Decisão de projeto |
 | Categorias Dúvidas/Suporte/Informações | Decisão de projeto |
+| Entrada ambígua | Decisão de projeto |
 | Mensagens de exemplo | Conteúdo ilustrativo |
 | Tratamento fora do escopo | Decisão de projeto |
 | Casos de teste | Testes planejados |
