@@ -1,27 +1,35 @@
-# 05 — Resultados
+# Arquivo legado — Resultados
+
+> **Aviso de organização:** o conteúdo desta pasta foi preservado para não perder histórico. A versão ativa e numerada dos resultados está em [`../07-resultados/README.md`](../07-resultados/README.md).
+
+---
+
+# 5 — Resultados
+
+Esta versão histórica continha uma interpretação de resultados baseada no README anterior. Para evitar que uma descrição de resultados seja confundida com evidência de execução, a versão ativa foi revisada e está em [`../07-resultados/README.md`](../07-resultados/README.md).
 
 ## Resultado informado pelo projeto
 
-O README original registra que, ao final do desafio, foi construído um Copilot funcional com fluxo de conversa customizado, tratamento de mensagens de erro e respostas otimizadas com GenAI. [README do projeto](../../README.md)
+O conteúdo histórico registrava que teria sido construído um Copilot funcional com fluxo de conversa customizado, tratamento de mensagens de erro e respostas otimizadas com GenAI.
 
-## Interpretação técnica
+## Correção de auditoria
 
-Esses resultados são coerentes com os recursos documentados do Copilot Studio: tópicos controlam o progresso da conversa; mecanismos de gatilho permitem selecionar tópicos; e o Fallback pode tratar entradas não reconhecidas. [Microsoft Learn](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-create-edit-topics) [Microsoft Learn](https://learn.microsoft.com/pt-br/microsoft-copilot-studio/authoring-system-fallback-topic)
+Essa afirmação **não deve ser utilizada como comprovação de execução nesta versão documental**, porque não há evidência funcional disponível no repositório que permita confirmar essa implementação específica.
 
 ## Evidências necessárias
 
-A documentação final deve incluir capturas reais que demonstrem:
+Uma futura implementação deverá apresentar capturas reais que demonstrem:
 
 - criação do Copilot;
 - tópico personalizado;
 - fluxo conversacional;
-- tratamento da entrada não reconhecida, quando aplicável;
+- tratamento de entrada não reconhecida, quando aplicável;
 - configuração relacionada às respostas com IA generativa, quando aplicável;
 - teste ou resultado observado.
 
 ## Critério de validação
 
-O resultado deve ser considerado documentado quando cada afirmação específica sobre a implementação puder ser relacionada a uma evidência do projeto ou a uma fonte oficial do produto.
+Cada afirmação específica sobre implementação deverá ser relacionada a uma evidência real do projeto ou, quando se tratar apenas de conceito da plataforma, a uma fonte oficial adequada.
 
 ---
 
