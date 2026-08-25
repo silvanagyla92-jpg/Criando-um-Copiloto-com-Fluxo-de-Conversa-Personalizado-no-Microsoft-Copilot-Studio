@@ -41,3 +41,15 @@ O tópico Fallback trata entradas que não são reconhecidas. A Microsoft docume
 ## Limite da documentação
 
 Este diagrama é uma representação conceitual baseada na documentação oficial. Ele não afirma que todos os componentes apresentados foram configurados no projeto original. As configurações efetivamente realizadas devem ser comprovadas pelas evidências em `evidencias/`.
+
+---
+
+**Projeto:** Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado
+
+**Autora:** Nágyla Silva
+
+Projeto integrante do portfólio prático em Inteligência Artificial,
+desenvolvido para demonstrar competências em treinamento e avaliação de
+sistemas de IA, análise crítica de respostas e anotação de dados, aplicadas às
+funções de AI Trainer, AI Response Evaluator e Data Annotator, com base em
+experiência em QA e Auditoria.
