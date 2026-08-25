@@ -142,7 +142,17 @@ A lista organizada e contextualizada está em [Referências técnicas](./referen
 | Referências técnicas | Organizadas |
 | Prompts utilizados | Documentados |
 
-## 11. Licença
+## 11. Contato
+
+**Autor:** Nágyla Silva  
+**Projeto:** Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado  
+**Desafio:** Criando um Copiloto com Fluxo de Conversa Personalizado no Microsoft Copilot Studio
+
+**GitHub:** [`silvanagyla92-jpg`](https://github.com/silvanagyla92-jpg)
+
+**LinkedIn:** [`Nágyla Silva`](https://www.linkedin.com/in/n%C3%A1gyla-silva-215aba35/)
+
+## 12. Licença
 
 Este projeto e os materiais originais nele contidos são disponibilizados sob a licença **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)**, salvo indicação expressa em contrário.
 
@@ -153,16 +163,6 @@ A licença permite o compartilhamento do material para fins não comerciais, com
 - [**Texto legal oficial**](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.en)
 
 Materiais de terceiros, marcas, logotipos, referências externas e conteúdos sujeitos a outras licenças permanecem submetidos aos respectivos direitos e condições.
-
-## 12. Contato
-
-**Autor:** Nágyla Silva  
-**Projeto:** Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado  
-**Desafio:** Criando um Copiloto com Fluxo de Conversa Personalizado no Microsoft Copilot Studio
-
-**GitHub:** [`silvanagyla92-jpg`](https://github.com/silvanagyla92-jpg)
-
-**LinkedIn:** [`Nágyla Silva`](https://www.linkedin.com/in/n%C3%A1gyla-silva-215aba35/)
 
 ---
 
