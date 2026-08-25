@@ -38,17 +38,7 @@ Ao final do desafio, foi registrado no projeto um Copilot com fluxo de conversa 
 - Inteligência Artificial Generativa (GenAI)
 - Microsoft Learn — documentação técnica oficial
 
-## 6. Contato
-
-**Autor:** Nágyla Silva  
-**Projeto:** Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado  
-**Desafio:** Criando um Copiloto com Fluxo de Conversa Personalizado no Microsoft Copilot Studio
-
-**GitHub:** [`silvanagyla92-jpg`](https://github.com/silvanagyla92-jpg)
-
-**LinkedIn:** [`Nágyla Silva`](https://www.linkedin.com/in/n%C3%A1gyla-silva-215aba35/)
-
-## 7. Navegação pela documentação
+## 6. Navegação pela documentação
 
 - [Documentação técnica](./docs/README.md)
 - [Metodologia](./docs/01-metodologia/README.md)
@@ -61,6 +51,16 @@ Ao final do desafio, foi registrado no projeto um Copilot com fluxo de conversa 
 - [Evidências — criação do Copilot](./evidencias/01-copilot/README.md)
 - [Evidências — fluxo](./evidencias/02-fluxo/README.md)
 - [Evidências — resultados](./evidencias/03-resultados/README.md)
+
+## 7. Contato
+
+**Autor:** Nágyla Silva  
+**Projeto:** Documentação Técnica de um Copiloto com Fluxo de Conversa Personalizado  
+**Desafio:** Criando um Copiloto com Fluxo de Conversa Personalizado no Microsoft Copilot Studio
+
+**GitHub:** [`silvanagyla92-jpg`](https://github.com/silvanagyla92-jpg)
+
+**LinkedIn:** [`Nágyla Silva`](https://www.linkedin.com/in/n%C3%A1gyla-silva-215aba35/)
 
 ---
 
